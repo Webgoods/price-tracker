@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracker RX 9070 XT</title>
+<style>
+  :root {
+    --bg: #f7f6f3; --panel: #ffffff; --fg: #1d1c1a; --muted: #6b6862; --line: #e3e0da;
+    --accent: #c2410c; --s2: #2563eb; --s3: #0f766e; --ok: #15803d; --bad: #b91c1c;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #161514; --panel: #201f1d; --fg: #ecebe8; --muted: #9c9891; --line: #34322f;
+      --accent: #fb923c; --s2: #60a5fa; --s3: #2dd4bf; --ok: #4ade80; --bad: #f87171;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--fg);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  main { max-width: 1040px; margin: 0 auto; padding: 28px 16px 48px; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+  h2 { font-size: 1rem; margin: 0 0 12px; }
+  .sub { color: var(--muted); margin: 0 0 24px; font-size: .9rem; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; margin-bottom: 16px; }
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; padding: 16px; }
+  .label { color: var(--muted); font-size: .8rem; }
+  .big { font: 600 1.9rem/1.2 Georgia, "Times New Roman", serif; margin: 4px 0 2px; font-variant-numeric: tabular-nums; }
+  .small { font-size: .82rem; color: var(--muted); overflow-wrap: anywhere; }
+  .up { color: var(--bad); } .down { color: var(--ok); }
+  #chart { position: relative; }
+  #chart svg { display: block; width: 100%; height: auto; overflow: visible; }
+  .legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: .82rem; color: var(--muted); margin-top: 8px; }
+  .legend i { display: inline-block; width: 12px; height: 3px; border-radius: 2px; vertical-align: middle; margin-right: 6px; }
+  .tip { position: absolute; pointer-events: none; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 8px; padding: 8px 10px; font-size: .8rem; box-shadow: 0 4px 16px rgba(0,0,0,.12); white-space: nowrap; display: none; }
+  .tablewrap { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+  th, td { text-align: left; padding: 8px 6px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { color: var(--muted); font-weight: 500; font-size: .8rem; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  a { color: inherit; text-decoration-color: var(--line); text-underline-offset: 3px; }
+  a:hover { text-decoration-color: var(--accent); }
+  .shop { white-space: nowrap; color: var(--muted); }
+  footer { margin-top: 20px; font-size: .8rem; color: var(--muted); }
+  .err { color: var(--bad); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Prezzi Radeon RX 9070 XT</h1>
+  <p class="sub" id="updated">Caricamento…</p>
+
+  <section class="tiles">
+    <div class="card"><div class="label">Prezzo più basso oggi</div><div class="big" id="k-min">—</div><div class="small" id="k-min-sub"></div></div>
+    <div class="card"><div class="label">Rispetto alla rilevazione precedente</div><div class="big" id="k-delta">—</div><div class="small" id="k-delta-sub"></div></div>
+    <div class="card"><div class="label">Media delle 10 più economiche</div><div class="big" id="k-avg">—</div><div class="small" id="k-avg-sub"></div></div>
+    <div class="card"><div class="label">Minimo storico</div><div class="big" id="k-low">—</div><div class="small" id="k-low-sub"></div></div>
+  </section>
+
+  <section class="card" style="margin-bottom:16px">
+    <h2>Andamento</h2>
+    <div id="chart"><div class="tip" id="tip"></div></div>
+    <div class="legend" id="legend"></div>
+  </section>
+
+  <section class="card">
+    <h2>Offerte di oggi</h2>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th class="num">#</th><th>Modello</th><th>Negozio</th><th class="num">Prezzo</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <footer>
+    Aggiornata ogni mattina da GitHub Actions leggendo Amazon.it e MediaWorld (solo schede nuove, prezzo mostrato in pagina).
+    La rilevazione del 15/10 viene da Trovaprezzi, che contava molti più negozi: la media non è confrontabile con i giorni successivi.
+  </footer>
+</main>
+
+<script>
+const eur = v => v == null ? "—" : v.toLocaleString("it-IT", { style: "currency", currency: "EUR" });
+const dfmt = d => new Date(d + "T12:00:00").toLocaleDateString("it-IT", { day: "numeric", month: "short" });
+const $ = id => document.getElementById(id);
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+const NS = "http://www.w3.org/2000/svg";
+let history = [];
+
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(NS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+function drawChart() {
+  const box = $("chart");
+  box.querySelector("svg")?.remove();
+  if (!history.length) return;
+  const W = Math.max(300, box.clientWidth), H = W < 500 ? 220 : 280;
+  const m = { t: 10, r: 12, b: 26, l: 52 };
+  const svg = el("svg", { viewBox: `0 0 ${W} ${H}`, width: "100%", role: "img",
+    "aria-label": "Andamento del prezzo minimo e della media" });
+  box.prepend(svg);
+
+  const shops = [...new Set(history.flatMap(h => Object.keys(h.by_shop || {})))];
+  const series = [
+    { name: "Minimo", color: css("--accent"), w: 2.5, get: h => h.min_price },
+    { name: "Media 10 più economiche", color: css("--muted"), w: 1.5, dash: "4 4", get: h => h.avg_top10 },
+    ...shops.map((s, i) => ({ name: "Minimo " + s, color: [css("--s2"), css("--s3")][i % 2], w: 1.5,
+      get: h => h.by_shop?.[s] })),
+  ];
+  const vals = history.flatMap(h => series.map(s => s.get(h))).filter(v => v != null);
+  let lo = Math.min(...vals), hi = Math.max(...vals);
+  const pad = Math.max(10, (hi - lo) * 0.12); lo -= pad; hi += pad;
+  const t0 = +new Date(history[0].date), t1 = +new Date(history.at(-1).date);
+  const x = d => history.length === 1 ? (m.l + W - m.r) / 2
+    : m.l + (+new Date(d) - t0) / (t1 - t0) * (W - m.l - m.r);
+  const y = v => m.t + (hi - v) / (hi - lo) * (H - m.t - m.b);
+
+  for (let i = 0; i <= 4; i++) {
+    const v = lo + (hi - lo) * i / 4;
+    el("line", { x1: m.l, x2: W - m.r, y1: y(v), y2: y(v), stroke: css("--line") }, svg);
+    el("text", { x: m.l - 8, y: y(v) + 4, "text-anchor": "end", "font-size": 11, fill: css("--muted") }, svg)
+      .textContent = Math.round(v) + " €";
+  }
+  const step = Math.max(1, Math.ceil(history.length / (W / 70)));
+  history.forEach((h, i) => {
+    if (i % step && i !== history.length - 1) return;
+    el("text", { x: x(h.date), y: H - 6, "text-anchor": "middle", "font-size": 11, fill: css("--muted") }, svg)
+      .textContent = dfmt(h.date);
+  });
+
+  for (const s of series) {
+    const pts = history.filter(h => s.get(h) != null);
+    if (pts.length > 1) el("path", { d: pts.map((h, i) => (i ? "L" : "M") + x(h.date) + "," + y(s.get(h))).join(""),
+      fill: "none", stroke: s.color, "stroke-width": s.w, "stroke-dasharray": s.dash || "", "stroke-linejoin": "round" }, svg);
+    for (const h of pts) el("circle", { cx: x(h.date), cy: y(s.get(h)), r: s.w + 1, fill: s.color }, svg);
+  }
+
+  $("legend").replaceChildren(...series.map(s => {
+    const span = document.createElement("span");
+    const i = document.createElement("i");
+    i.style.background = s.color;
+    span.append(i, s.name);
+    return span;
+  }));
+
+  const tip = $("tip");
+  const guide = el("line", { y1: m.t, y2: H - m.b, stroke: css("--muted"), "stroke-width": 1, opacity: 0 }, svg);
+  svg.addEventListener("pointermove", ev => {
+    const r = svg.getBoundingClientRect();
+    const px = (ev.clientX - r.left) * W / r.width;
+    const h = history.reduce((a, b) => Math.abs(x(b.date) - px) < Math.abs(x(a.date) - px) ? b : a);
+    guide.setAttribute("x1", x(h.date)); guide.setAttribute("x2", x(h.date)); guide.setAttribute("opacity", .4);
+    tip.replaceChildren();
+    const b = document.createElement("b"); b.textContent = dfmt(h.date); tip.append(b);
+    for (const s of series) {
+      if (s.get(h) == null) continue;
+      const d = document.createElement("div"); d.textContent = `${s.name}: ${eur(s.get(h))}`; tip.append(d);
+    }
+    tip.style.display = "block";
+    const left = x(h.date) * r.width / W;
+    tip.style.left = Math.min(Math.max(0, left - tip.offsetWidth / 2), r.width - tip.offsetWidth) + "px";
+    tip.style.top = "0px";
+  });
+  svg.addEventListener("pointerleave", () => { tip.style.display = "none"; guide.setAttribute("opacity", 0); });
+}
+
+function fillKpis(offersDoc) {
+  const last = history.at(-1), prev = history.at(-2);
+  $("k-min").textContent = eur(last.min_price);
+  $("k-min-sub").textContent = `${last.cheapest_model} · ${last.cheapest_shop}`;
+  if (prev) {
+    const d = last.min_price - prev.min_price;
+    $("k-delta").textContent = (d > 0 ? "+" : d < 0 ? "−" : "±") + eur(Math.abs(d));
+    $("k-delta").className = "big " + (d > 0 ? "up" : d < 0 ? "down" : "");
+    $("k-delta-sub").textContent = `Prima: ${eur(prev.min_price)} il ${dfmt(prev.date)}`;
+  }
+  $("k-avg").textContent = eur(last.avg_top10);
+  $("k-avg-sub").textContent = `${last.offers} offerte trovate`;
+  const low = history.reduce((a, b) => b.min_price < a.min_price ? b : a);
+  $("k-low").textContent = eur(low.min_price);
+  $("k-low-sub").textContent = `il ${dfmt(low.date)} · ${low.cheapest_shop}`;
+
+  const when = new Date(offersDoc.updated);
+  const failed = Object.entries(offersDoc.sources || {}).filter(([, v]) => !v.startsWith("ok"));
+  $("updated").textContent = "Ultimo aggiornamento: " + when.toLocaleString("it-IT", { dateStyle: "long", timeStyle: "short" })
+    + (failed.length ? ` · non letto: ${failed.map(f => f[0]).join(", ")}` : "");
+  if ((Date.now() - when) / 36e5 > 36) $("updated").classList.add("err");
+
+  $("rows").replaceChildren(...offersDoc.offers.map(o => {
+    const tr = document.createElement("tr");
+    const td = (t, cls) => { const c = document.createElement("td"); if (cls) c.className = cls; c.textContent = t; return c; };
+    const name = document.createElement("td");
+    const a = document.createElement("a"); a.href = o.url; a.target = "_blank"; a.rel = "noopener"; a.textContent = o.model;
+    name.append(a);
+    tr.append(td(o.rank, "num"), name, td(o.shop, "shop"), td(eur(o.price), "num"));
+    return tr;
+  }));
+}
+
+Promise.all(["data/history.json", "data/offers.json"].map(u => fetch(u, { cache: "no-store" }).then(r => r.json())))
+  .then(([h, o]) => { history = h; fillKpis(o); drawChart(); })
+  .catch(e => { $("updated").textContent = "Impossibile leggere i dati: " + e.message; $("updated").classList.add("err"); });
+
+let rt; addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(drawChart, 150); });
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change", drawChart);
+</script>
+</body>
+</html>
