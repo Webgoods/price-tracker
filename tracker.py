@@ -13,6 +13,7 @@ import time
 import urllib.request
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 DATA = Path(__file__).parent / "docs" / "data"
 UA = "Mozilla/5.0 (X11; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0"
@@ -114,7 +115,7 @@ def main():
         sys.exit(1)
 
     now = datetime.now(timezone.utc)
-    today = now.date().isoformat()
+    today = now.astimezone(ZoneInfo("Europe/Rome")).date().isoformat()  # giorno italiano
     rows = [{"rank": i + 1, **o} for i, o in enumerate(clean)]
     (DATA / "offers.json").write_text(json.dumps(
         {"updated": now.isoformat(timespec="seconds"), "sources": status, "offers": rows},

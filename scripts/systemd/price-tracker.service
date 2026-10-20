@@ -1,0 +1,7 @@
+[Unit]
+Description=Rileva prezzi RX 9070 XT e li carica su GitHub
+
+[Service]
+Type=oneshot
+ExecStart=%h/Documenti/price-tracker/scripts/run-local.sh
+TimeoutStartSec=15min

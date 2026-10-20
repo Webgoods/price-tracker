@@ -1,9 +1,9 @@
 name: Rileva prezzi
 
+# Solo avvio manuale: Amazon e MediaWorld bloccano i server di GitHub,
+# quindi la rilevazione giornaliera parte dai PC (scripts/run-local.sh).
 on:
-  schedule:
-    - cron: "17 6 * * *"   # ogni giorno alle 6:17 UTC (8:17 in Italia d'estate)
-  workflow_dispatch:        # avvio manuale dalla scheda Actions
+  workflow_dispatch:
 
 permissions:
   contents: write

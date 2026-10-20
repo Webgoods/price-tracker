@@ -1,0 +1,12 @@
+[Unit]
+Description=Rileva prezzi RX 9070 XT ogni ora (una sola rilevazione al giorno)
+
+[Timer]
+# Poco dopo l'accensione, poi ogni ora finché la rilevazione del giorno non riesce.
+OnStartupSec=3min
+OnCalendar=hourly
+RandomizedDelaySec=5min
+Persistent=true
+
+[Install]
+WantedBy=timers.target
