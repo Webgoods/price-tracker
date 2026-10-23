@@ -46,5 +46,17 @@
    "MediaWorld": 1012.27
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-10-23",
+  "min_price": 1012.27,
+  "avg_top10": 1086.26,
+  "offers": 12,
+  "cheapest_model": "ASROCK AMD Radeon RX 9070 XT 16 GB GDDR6",
+  "cheapest_shop": "MediaWorld",
+  "by_shop": {
+   "MediaWorld": 1012.27
+  },
+  "source": "negozi"
  }
 ]
