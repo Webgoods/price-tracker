@@ -1,7 +1,7 @@
 {
- "updated": "2026-10-25T20:18:02+00:00",
+ "updated": "2026-10-26T17:49:15+00:00",
  "sources": {
-  "Amazon.it": "ok (30)",
+  "Amazon.it": "ok (29)",
   "MediaWorld": "ok (12)"
  },
  "offers": [
@@ -21,199 +21,185 @@
   },
   {
    "rank": 3,
-   "model": "Gigabyte AORUS Radeon RX 9070 XT ELITE 16G Scheda Grafica - 16 GB GDDR6, 256 bit, PCI-E 5.0, 3100 MHz Frequenza Base, 2 x DisplayPort, 2 x HDMI, GV-R9070XTAORUS E-16GD",
+   "model": "Xfx Vga 16gb Radeon Rx9070xt Quicksilver White Oc Gaming 3xdp/1xhdmi Amd - Grafikkarte (rX-97tqickw9)",
    "shop": "Amazon.it",
-   "price": 919.99,
-   "url": "https://www.amazon.it/dp/B0DT7C5ZC7"
+   "price": 919.0,
+   "url": "https://www.amazon.it/dp/B0DX16XMDN"
   },
   {
    "rank": 4,
-   "model": "Powercolor Hellhound Radeon Rx 9070 Xt Spectral White Amd 16 Gb Gddr6 (rx9070xt 16G-L/oc/white)",
-   "shop": "Amazon.it",
-   "price": 931.59,
-   "url": "https://www.amazon.it/dp/B0CVVJV5LV"
-  },
-  {
-   "rank": 5,
    "model": "ASUS PRIME RX9070XT OC, Scheda Grafica 16 GB GDDR6 AMD Radeon, Bianca",
    "shop": "Amazon.it",
    "price": 938.9,
    "url": "https://www.amazon.it/dp/B09BMQNNR1"
   },
   {
-   "rank": 6,
+   "rank": 5,
    "model": "Xfx Rx 9070xt Mercury Magnetic Air Rgb Gaming 16gb Oc Black Retail - 16.384 Mb (rX-97tmargb9)",
    "shop": "Amazon.it",
    "price": 949.0,
    "url": "https://www.amazon.it/dp/B0DXVYQN67"
   },
   {
-   "rank": 7,
+   "rank": 6,
    "model": "XFX Mercury AMD Radeon RX 9070XT OC White Magnetic Air Edition con RGB 16 GB GDDR6 HDMI 3xDP, AMD RDNA™ 4 (RX-97TMARGW9)",
    "shop": "Amazon.it",
    "price": 949.0,
    "url": "https://www.amazon.it/dp/B0DWP6PY32"
   },
   {
-   "rank": 8,
+   "rank": 7,
    "model": "Sapphire Pulse Radeon RX 9070 XT - Grafikkarte",
    "shop": "Amazon.it",
    "price": 969.09,
    "url": "https://www.amazon.it/dp/B0DRPRZMK2"
   },
   {
-   "rank": 9,
+   "rank": 8,
    "model": "Gigabyte Radeon RX 9070 XT GAMING OC 16G Scheda Grafica - 16 GB GDDR6, 256 bit, PCI-E 5.0, 3060 MHz Frequenza Base, 2 x DisplayPort, 2 x HDMI, GV-R9070XTGAMING OC-16GD",
    "shop": "Amazon.it",
-   "price": 985.99,
+   "price": 986.99,
    "url": "https://www.amazon.it/dp/B0DT7B79K9"
   },
   {
-   "rank": 10,
+   "rank": 9,
    "model": "Gigabyte Radeon RX 9070 XT GAMING OC ICE 16G Scheda Grafica - 16GB GDDR6, 256bit, PCI-E 5.0, 3060 MHz Frequenza core, 2 x DisplayPort, 2 x HDMI, GV-R907XGAMINGOCICE-16GD",
    "shop": "Amazon.it",
    "price": 986.99,
    "url": "https://www.amazon.it/dp/B0G14L8BLN"
   },
   {
-   "rank": 11,
-   "model": "ASUS TUF GAMING RX9070XT OC, Scheda Grafica 16 GB GDDR6 AMD Radeon, Nera",
+   "rank": 10,
+   "model": "Gigabyte AORUS Radeon RX 9070 XT ELITE 16G Scheda Grafica - 16 GB GDDR6, 256 bit, PCI-E 5.0, 3100 MHz Frequenza Base, 2 x DisplayPort, 2 x HDMI, GV-R9070XTAORUS E-16GD",
    "shop": "Amazon.it",
-   "price": 1017.99,
-   "url": "https://www.amazon.it/dp/B0DSWJL78F"
+   "price": 994.8,
+   "url": "https://www.amazon.it/dp/B0DT7C5ZC7"
   },
   {
-   "rank": 12,
+   "rank": 11,
    "model": "Sapphire 11348-03-20G Pulse - Scheda grafica da gioco AMD Radeon™ RX 9070 XT con 16 GB GDDR6, AMD RDNA 4",
    "shop": "Amazon.it",
    "price": 1022.99,
    "url": "https://www.amazon.it/dp/B0DTHMPWFR"
   },
   {
-   "rank": 13,
+   "rank": 12,
    "model": "Sapphire Pure Radeon RX 9070 XT - Grafikkarte",
    "shop": "Amazon.it",
-   "price": 1029.29,
+   "price": 1029.09,
    "url": "https://www.amazon.it/dp/B0DRPRKYR6"
   },
   {
-   "rank": 14,
-   "model": "ASUS Prime  Radeon RX 9070 XT 16 GB GDDR6 OC",
-   "shop": "MediaWorld",
-   "price": 1030.89,
-   "url": "https://www.mediaworld.it/it/product/_asus-prime-radeon-rx-9070-xt-16-gb-oc-scheda-grafica-16-gb-155889833.html"
-  },
-  {
-   "rank": 15,
+   "rank": 13,
    "model": "GIGABYTE Scheda grafica Radeon RX 9070 XT Gaming OC 16G, PCIe 5.0, 16GB GDDR6, GV-R9070XTGAMING OC-16GD Scheda Video",
    "shop": "Amazon.it",
    "price": 1039.31,
    "url": "https://www.amazon.it/dp/B0DS2QG2KW"
   },
   {
-   "rank": 16,
+   "rank": 14,
    "model": "ASROCK AMD Radeon RX 9070 XT CL 16 GB GDDR6 Challenger OC",
    "shop": "MediaWorld",
    "price": 1039.64,
    "url": "https://www.mediaworld.it/it/product/_asrock-amd-radeon-rx-9070-xt-cl-16-gb-gddr6-scheda-grafica-16-gb-165455116.html"
   },
   {
-   "rank": 17,
+   "rank": 15,
    "model": "XFX Quicksilver AMD Radeon RX 9070 XT Gaming Edition 16 GB GDDR6",
    "shop": "MediaWorld",
    "price": 1039.65,
    "url": "https://www.mediaworld.it/it/product/_xfx-quicksilver-amd-radeon-rx-9070-xt-gaming-edition-16-gb-gddr6-scheda-grafica-16-gb-160708573.html"
   },
   {
-   "rank": 18,
+   "rank": 16,
    "model": "XFX Swift Radeon RX 9070 XT Triple Fan Gaming Edition 16 GB GDDR6",
    "shop": "MediaWorld",
    "price": 1039.65,
    "url": "https://www.mediaworld.it/it/product/_xfx-swift-radeon-rx-9070-xt-triple-fan-gaming-edition-16-gb-gddr6-scheda-grafica-16-gb-160268471.html"
   },
   {
-   "rank": 19,
+   "rank": 17,
    "model": "XFX Swift Radeon RX 9070 XT White Triple Fan Gaming Edition 16 GB GDDR6",
    "shop": "MediaWorld",
    "price": 1062.35,
    "url": "https://www.mediaworld.it/it/product/_xfx-swift-radeon-rx-9070-xt-white-triple-fan-gaming-edition-16-gb-gddr6-scheda-grafica-16-gb-159531789.html"
   },
   {
-   "rank": 20,
+   "rank": 18,
+   "model": "POWERCOLOR AMD Radeon RX 9070 XT 16 GB GDDR6",
+   "shop": "MediaWorld",
+   "price": 1068.95,
+   "url": "https://www.mediaworld.it/it/product/_powercolor-rx9070xt-16g-a-scheda-grafica-16-gb-153578152.html"
+  },
+  {
+   "rank": 19,
    "model": "Sapphire Radeon RX9070XT Nitro+ Crimson 16GB GDDR6 2xHDM (11348-10-20G)",
    "shop": "Amazon.it",
    "price": 1079.31,
    "url": "https://www.amazon.it/dp/B0GFB3RGHM"
   },
   {
-   "rank": 21,
+   "rank": 20,
    "model": "XFX Mercury AMD Radeon RX 9070 XT OC Gaming Edition 16 GB GDDR6",
    "shop": "MediaWorld",
    "price": 1085.05,
    "url": "https://www.mediaworld.it/it/product/_xfx-mercury-amd-radeon-rx-9070-xt-oc-gaming-edition-16-gb-gddr6-scheda-grafica-16-gb-160687818.html"
   },
   {
-   "rank": 22,
-   "model": "XFX Quicksilver AMD Radeon RX 9070XT Gaming Edition con 16 GB di GDDR6 HDMI 3xDP, AMD RDNA™ 4 (RX-97TQICKB9)",
-   "shop": "Amazon.it",
-   "price": 1087.9,
-   "url": "https://www.amazon.it/dp/B0DXVMSQ5T"
+   "rank": 21,
+   "model": "GIGABYTE AMD Radeon RX 9070 XT 16 GB GDDR6 Gaming OC ICE",
+   "shop": "MediaWorld",
+   "price": 1093.98,
+   "url": "https://www.mediaworld.it/it/product/_gigabyte-amd-radeon-rx-9070-xt-16-gb-gddr6-gaming-oc-ice-scheda-grafica-16-gb-165442712.html"
   },
   {
-   "rank": 23,
+   "rank": 22,
    "model": "Sapphire NITRO+ AMD RADEON™ RX 9070 XT GAMING OC 16GB DUAL HDMI/DUAL DP",
    "shop": "Amazon.it",
    "price": 1103.62,
    "url": "https://www.amazon.it/dp/B0DRPPXB5X"
   },
   {
-   "rank": 24,
-   "model": "POWERCOLOR RX9070XT 16G-L/OC/WHITE Hellhound Spectral White Radeon RX 9070 XT AMD 16 GB",
+   "rank": 23,
+   "model": "GIGABYTE Radeon RX 9070 XT GAMING OC 16G",
    "shop": "MediaWorld",
-   "price": 1133.75,
-   "url": "https://www.mediaworld.it/it/product/_powercolor-rx9070xt-16g-locwhite-hellhound-spectral-white-radeon-rx-9070-xt-amd-16-gb-scheda-grafica-16-gb-157917266.html"
+   "price": 1111.76,
+   "url": "https://www.mediaworld.it/it/product/_gigabyte-radeon-rx-9070-xt-gaming-oc-16g-scheda-grafica-16-gb-155880434.html"
+  },
+  {
+   "rank": 24,
+   "model": "GIGABYTE AMD Radeon RX 9070 XT AORUS ELITE 16 GB GDDR6 FSR 4",
+   "shop": "MediaWorld",
+   "price": 1140.86,
+   "url": "https://www.mediaworld.it/it/product/_gigabyte-gv-r9070xtaorus-e-16gd-scheda-grafica-16-gb-153900929.html"
   },
   {
    "rank": 25,
-   "model": "ASROCK AMD Radeon RX 9070 XT TAICHI CL 16 GB GDDR6 White",
+   "model": "XFX AMD Quicksilver Radeon RX 9070 XT Gaming Edition 16 GB GDDR6",
    "shop": "MediaWorld",
-   "price": 1142.17,
-   "url": "https://www.mediaworld.it/it/product/_asrock-amd-radeon-rx-9070-xt-taichi-cl-16-gb-gddr6-white-scheda-grafica-16-gb-170284841.html"
+   "price": 1149.25,
+   "url": "https://www.mediaworld.it/it/product/_xfx-amd-quicksilver-radeon-rx-9070-xt-gaming-edition-16-gb-gddr6-scheda-grafica-16-gb-160669658.html"
   },
   {
    "rank": 26,
    "model": "POWERCOLOR AMD Radeon RX 9070 XT REVA Hellhound OC 16 GB GDDR7",
    "shop": "MediaWorld",
-   "price": 1142.17,
+   "price": 1176.19,
    "url": "https://www.mediaworld.it/it/product/_powercolor-amd-radeon-rx-9070-xt-reva-hellhound-oc-16-gb-gddr7-scheda-grafica-16-gb-164607125.html"
   },
   {
    "rank": 27,
-   "model": "XFX AMD Mercury Radeon RX 9070 XT OC Magnetic Air Edition 16 GB GDDR6",
-   "shop": "MediaWorld",
-   "price": 1149.02,
-   "url": "https://www.mediaworld.it/it/product/_xfx-amd-mercury-radeon-rx-9070-xt-oc-magnetic-air-edition-16-gb-gddr6-scheda-grafica-16-gb-160663936.html"
-  },
-  {
-   "rank": 28,
-   "model": "SAPPHIRE Radeon RX 9070 XT NITRO+ OC 16GB GDDR6 Crimson Desert",
-   "shop": "MediaWorld",
-   "price": 1156.35,
-   "url": "https://www.mediaworld.it/it/product/_sapphire-radeon-rx-9070-xt-nitro-oc-16gb-gddr6-crimson-desert-schede-grafiche-16-gb-171511290.html"
-  },
-  {
-   "rank": 29,
    "model": "Sapphire 11348-01-20G Nitro+ AMD Radeon RX 9070 XT Gaming OC Scheda grafica con 16 GB GDDR6, AMD RDNA 4",
    "shop": "Amazon.it",
    "price": 1192.85,
    "url": "https://www.amazon.it/dp/B0DTHP39JF"
   },
   {
-   "rank": 30,
-   "model": "SAPPHIRE AMD Radeon RX 9070 XT 16 GB GDDR6",
+   "rank": 28,
+   "model": "POWERCOLOR RX9070XT 16G-E/OC Red Devil Radeon RX 9070 XT AMD 16 GB GDDR6",
    "shop": "MediaWorld",
-   "price": 1207.01,
-   "url": "https://www.mediaworld.it/it/product/_sapphire-11348-01-20g-scheda-grafica-16-gb-156848721.html"
+   "price": 1231.49,
+   "url": "https://www.mediaworld.it/it/product/_powercolor-rx9070xt-16g-eoc-red-devil-radeon-rx-9070-xt-amd-16-gb-gddr6-scheda-grafica-16-gb-157942616.html"
   }
  ]
 }
