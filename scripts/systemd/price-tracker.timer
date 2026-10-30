@@ -1,5 +1,5 @@
 [Unit]
-Description=Rileva prezzi RX 9070 XT ogni ora (una sola rilevazione al giorno)
+Description=Rileva i prezzi ogni ora (una sola rilevazione al giorno)
 
 [Timer]
 # Poco dopo l'accensione, poi ogni ora finché la rilevazione del giorno non riesce.

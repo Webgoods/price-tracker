@@ -1,5 +1,5 @@
 [Unit]
-Description=Rileva prezzi RX 9070 XT e li carica su GitHub
+Description=Rileva i prezzi (RX 9070 XT, mini PC) e li carica su GitHub
 
 [Service]
 Type=oneshot

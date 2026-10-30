@@ -5,7 +5,7 @@ set -euo pipefail
 cd "$(dirname "$0")/.."
 
 today=$(TZ=Europe/Rome date +%F)
-done_today() { grep -q "\"date\": \"$today\"" docs/data/history.json; }
+done_today() { grep -qs "\"date\": \"$today\"" docs/data/status.json; }
 
 # Già fatto oggi (da questo PC): non serve nemmeno la rete.
 if done_today && [ "${FORCE:-}" != 1 ]; then echo "Rilevazione di $today già presente."; exit 0; fi

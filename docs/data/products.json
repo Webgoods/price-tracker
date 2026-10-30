@@ -1,0 +1,50 @@
+{
+ "groups": {
+  "gpu": "Scheda video",
+  "minipc": "Mini PC server"
+ },
+ "products": [
+  {
+   "id": "rx9070xt",
+   "group": "gpu",
+   "name": "Radeon RX 9070 XT",
+   "target": 750,
+   "specs": null
+  },
+  {
+   "id": "gmktec-k8-plus",
+   "group": "minipc",
+   "name": "GMKtec K8 Plus",
+   "target": 600,
+   "specs": "Ryzen 7 8845HS · 2× SO-DIMM DDR5 · 2× M.2 · 2× LAN 2.5G · OCuLink · Win 11 Pro"
+  },
+  {
+   "id": "beelink-ser8",
+   "group": "minipc",
+   "name": "Beelink SER8",
+   "target": 600,
+   "specs": "Ryzen 7 8845HS/8745HS · 2× SO-DIMM DDR5 · 2× M.2 · 1× LAN 2.5G · molto silenzioso · Win 11 Pro"
+  },
+  {
+   "id": "geekom-a8-max",
+   "group": "minipc",
+   "name": "GEEKOM A8 Max",
+   "target": 650,
+   "specs": "Ryzen 7 8845HS/8745HS · 2× SO-DIMM DDR5 · 1× M.2 · 2× LAN 2.5G · garanzia 3 anni · Win 11 Pro"
+  },
+  {
+   "id": "gmktec-m7-ultra",
+   "group": "minipc",
+   "name": "GMKtec M7 Ultra",
+   "target": 520,
+   "specs": "Ryzen 7 PRO 6850U · DDR5 dual channel · 2× M.2 · 2× LAN 2.5G Intel · OCuLink · Win 11 Pro"
+  },
+  {
+   "id": "nipogi-am06-pro",
+   "group": "minipc",
+   "name": "NiPoGi AM06 Pro",
+   "target": 450,
+   "specs": "Ryzen 7 7730U · 32 GB DDR4 espandibile · M.2 + slot 2,5\" · 2× LAN 1G · Win 11 Pro"
+  }
+ ]
+}
