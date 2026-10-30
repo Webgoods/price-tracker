@@ -1,0 +1,14 @@
+[
+ {
+  "date": "2026-10-30",
+  "min_price": 1049.99,
+  "avg_top10": 1049.99,
+  "offers": 1,
+  "cheapest_model": "Beelink MINI DESKTOP SER8 8745 HS Gaming, AMD, Ryzen™ 7 8745 HS 8C/16T 4.9GHz Max Turbo Frequency, 4.9 GHz, Radeon™ 780M, RAM 32 GB, 1000 GB SSD",
+  "cheapest_shop": "MediaWorld",
+  "by_shop": {
+   "MediaWorld": 1049.99
+  },
+  "source": "negozi"
+ }
+]

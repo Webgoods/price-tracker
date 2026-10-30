@@ -110,5 +110,17 @@
    "MediaWorld": 1032.7
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-10-30",
+  "min_price": 1039.64,
+  "avg_top10": 1168.76,
+  "offers": 12,
+  "cheapest_model": "ASROCK AMD Radeon RX 9070 XT CL 16 GB GDDR6 Challenger OC, SCHEDA GRAFICA, 16 GB",
+  "cheapest_shop": "MediaWorld",
+  "by_shop": {
+   "MediaWorld": 1039.64
+  },
+  "source": "negozi"
  }
 ]
