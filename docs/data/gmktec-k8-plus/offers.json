@@ -1,0 +1,30 @@
+{
+ "updated": "2026-11-01T19:27:07+00:00",
+ "sources": {
+  "Amazon.it": "ok (23)",
+  "MediaWorld": "ok (12)"
+ },
+ "offers": [
+  {
+   "rank": 1,
+   "model": "GMKtec Mini PC Ryzen 7 8845HS (8C/16T, fino a 5.1Ghz) K8 Plus 32 GB DDR5 1TB SSD Mini Computer con Quadruplo display 4K|Tipo-C|WiFi 6|BT 5.2 |Oculink|Doppia scheda di rete 2,5G|HDMI 2.1|USB4",
+   "shop": "Amazon.it",
+   "price": 909.96,
+   "url": "https://www.amazon.it/dp/B0F9YMR7MP"
+  },
+  {
+   "rank": 2,
+   "model": "GMKtec Gaming Mini PC K8 Plus AMD Ryzen 7 8845HS (8C/16T, Up to 5.1GHz) 32GB RAM DDR5 512GB SSD, Oculink Desktop Computer/Dual NIC 2.5G/WIFI 6/BT5.2/HDMI 2.1/USB4/USB3.22+USB2.0",
+   "shop": "Amazon.it",
+   "price": 989.96,
+   "url": "https://www.amazon.it/dp/B0DNVSL5LL"
+  },
+  {
+   "rank": 3,
+   "model": "GMKtec Gaming Mini PC K8 Plus AMD Ryzen 7 8845HS (8C/16T, fino a 5,1 GHz) 32 GB di RAM DDR5 1 TB SSD, Computer desktop Oculink/Dual NIC 2,5G/WIFI 6E/BT5.2/HDMI 2.1/USB4/USB3.22 + USB2.0",
+   "shop": "Amazon.it",
+   "price": 1097.82,
+   "url": "https://www.amazon.it/dp/B0DM4LMN72"
+  }
+ ]
+}

@@ -1,27 +1,27 @@
 {
- "date": "2026-10-30",
- "updated": "2026-10-30T11:21:58+00:00",
+ "date": "2026-11-01",
+ "updated": "2026-11-01T19:27:07+00:00",
  "products": {
   "rx9070xt": {
    "sources": {
-    "Amazon.it": "ok (0)",
+    "Amazon.it": "ok (29)",
     "MediaWorld": "ok (12)"
    },
-   "offers": 12
+   "offers": 29
   },
   "gmktec-k8-plus": {
    "sources": {
-    "Amazon.it": "ok (0)",
+    "Amazon.it": "ok (23)",
     "MediaWorld": "ok (12)"
    },
-   "offers": 0
+   "offers": 3
   },
   "beelink-ser8": {
    "sources": {
-    "Amazon.it": "ok (0)",
+    "Amazon.it": "ok (30)",
     "MediaWorld": "ok (12)"
    },
-   "offers": 1
+   "offers": 9
   },
   "geekom-a8-max": {
    "sources": {
@@ -39,10 +39,10 @@
   },
   "nipogi-am06-pro": {
    "sources": {
-    "Amazon.it": "ok (28)",
+    "Amazon.it": "ok (27)",
     "MediaWorld": "ok (12)"
    },
-   "offers": 2
+   "offers": 1
   }
  }
 }
