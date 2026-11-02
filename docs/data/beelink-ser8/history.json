@@ -35,5 +35,18 @@
    "MediaWorld": 997.49
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-03",
+  "min_price": 819.0,
+  "avg_top10": 883.28,
+  "offers": 9,
+  "cheapest_model": "Beelink SER8 Mini PC, AMD Ryzen 7 8745HS (8 core/16 core, fino a 4.9 GHz), 32 GB di RAM DDR5, SSD 512 GB, 3 schermi (HDMI/DP/USB4), Wi-FI 6/BT5.2/LAN 2,5 GHz",
+  "cheapest_shop": "Amazon.it",
+  "by_shop": {
+   "Amazon.it": 819.0,
+   "MediaWorld": 997.49
+  },
+  "source": "negozi"
  }
 ]
