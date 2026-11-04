@@ -161,5 +161,18 @@
    "MediaWorld": 1039.64
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-04",
+  "min_price": 899.0,
+  "avg_top10": 997.46,
+  "offers": 27,
+  "cheapest_model": "XFX RX 9070XT Swift Gaming 16GB GDDR6 Black",
+  "cheapest_shop": "Amazon.it",
+  "by_shop": {
+   "Amazon.it": 899.0,
+   "MediaWorld": 1046.05
+  },
+  "source": "negozi"
  }
 ]

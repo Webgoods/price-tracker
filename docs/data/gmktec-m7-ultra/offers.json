@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-02T23:03:54+00:00",
+ "updated": "2026-11-04T11:42:02+00:00",
  "sources": {
-  "Amazon.it": "ok (30)",
+  "Amazon.it": "ok (29)",
   "MediaWorld": "ok (12)"
  },
  "offers": [
@@ -9,8 +9,15 @@
    "rank": 1,
    "model": "GMKtec Mini PC Gaming, M7 Ultra Ryzen 7 PRO 6850U 32GB DDR5 RAM + 1TB Hard Drive PCle SSD Oculink Dual NIC LAN 2.5G Desktop Computer, Dual USB4, HDMI 2.1, USB-C",
    "shop": "Amazon.it",
-   "price": 839.96,
+   "price": 660.16,
    "url": "https://www.amazon.it/dp/B0DDT1MXF4"
+  },
+  {
+   "rank": 2,
+   "model": "GMKtec Mini PC M7 Ultra, Ryzen 7 Pro 6850U, 32G RAM 1T SSD",
+   "shop": "Amazon.it",
+   "price": 845.07,
+   "url": "https://www.amazon.it/dp/B0DDSK66TK"
   }
  ]
 }
