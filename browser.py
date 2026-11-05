@@ -24,6 +24,9 @@ import urllib.request
 from pathlib import Path
 
 PORT = 9223  # porta locale del debug remoto (solo 127.0.0.1)
+# Opzioni comuni al tracker e al setup. --password-store=basic: il profilo non usa il
+# portachiavi di sistema, che se è bloccato farebbe comparire la richiesta della password.
+COMMON_FLAGS = ["--no-first-run", "--no-default-browser-check", "--password-store=basic"]
 
 # Senza proxy: le chiamate vanno solo a Chrome su questo PC.
 _local = urllib.request.build_opener(urllib.request.ProxyHandler({}))
@@ -196,8 +199,8 @@ class Chrome:
             profile.mkdir(parents=True, exist_ok=True)
             self.proc = subprocess.Popen(
                 command + [f"--remote-debugging-port={PORT}", "--remote-debugging-address=127.0.0.1",
-                           f"--user-data-dir={profile}", "--no-first-run",
-                           "--no-default-browser-check", "--hide-crash-restore-bubble", "--new-window", url],
+                           f"--user-data-dir={profile}", *COMMON_FLAGS,
+                           "--hide-crash-restore-bubble", "--new-window", url],
                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             for _ in range(60):
                 time.sleep(0.5)
@@ -246,8 +249,8 @@ def setup(command):
     print(f"Profilo Chrome del tracker: {profile}")
     print("Si apre Chrome su Trovaprezzi: accetta i cookie, risolvi l'eventuale verifica,")
     print("guarda pure qualche pagina, poi chiudi la finestra.")
-    subprocess.run(command + [f"--user-data-dir={profile}", "--no-first-run",
-                              "--no-default-browser-check", "--new-window", "https://www.trovaprezzi.it/"])
+    subprocess.run(command + [f"--user-data-dir={profile}", *COMMON_FLAGS,
+                              "--new-window", "https://www.trovaprezzi.it/"])
     print("Fatto.")
 
 
