@@ -29,7 +29,12 @@ PORT = 9223  # porta locale del debug remoto (solo 127.0.0.1)
 _local = urllib.request.build_opener(urllib.request.ProxyHandler({}))
 
 
-def profile_dir():
+def profile_dir(command=None):
+    if command and Path(command[0]).name == "flatpak":
+        # Chrome in Flatpak vede solo la sua cartella in ~/.var/app: un profilo altrove
+        # finirebbe in una cartella temporanea della sandbox e si perderebbe a ogni avvio.
+        app_id = next((a for a in command[2:] if not a.startswith("-")), "com.google.Chrome")
+        return Path.home() / ".var" / "app" / app_id / "data" / "price-tracker" / "chrome-profile"
     if platform.system() == "Windows":
         base = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
     else:
@@ -187,10 +192,11 @@ class Chrome:
         try:
             _http("/json/version")  # già in esecuzione (es. da un giro precedente interrotto)
         except OSError:
-            profile_dir().mkdir(parents=True, exist_ok=True)
+            profile = profile_dir(command)
+            profile.mkdir(parents=True, exist_ok=True)
             self.proc = subprocess.Popen(
                 command + [f"--remote-debugging-port={PORT}", "--remote-debugging-address=127.0.0.1",
-                           f"--user-data-dir={profile_dir()}", "--no-first-run",
+                           f"--user-data-dir={profile}", "--no-first-run",
                            "--no-default-browser-check", "--new-window", url],
                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             for _ in range(60):
@@ -235,11 +241,12 @@ class Chrome:
 
 def setup(command):
     """Apre il profilo dedicato su Trovaprezzi: accetta i cookie, poi chiudi la finestra."""
-    profile_dir().mkdir(parents=True, exist_ok=True)
-    print(f"Profilo Chrome del tracker: {profile_dir()}")
+    profile = profile_dir(command)
+    profile.mkdir(parents=True, exist_ok=True)
+    print(f"Profilo Chrome del tracker: {profile}")
     print("Si apre Chrome su Trovaprezzi: accetta i cookie, risolvi l'eventuale verifica,")
     print("guarda pure qualche pagina, poi chiudi la finestra.")
-    subprocess.run(command + [f"--user-data-dir={profile_dir()}", "--no-first-run",
+    subprocess.run(command + [f"--user-data-dir={profile}", "--no-first-run",
                               "--no-default-browser-check", "--new-window", "https://www.trovaprezzi.it/"])
     print("Fatto.")
 
