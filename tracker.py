@@ -5,10 +5,14 @@ Per ogni prodotto aggiorna docs/data/<id>/offers.json (offerte di oggi) e
 docs/data/<id>/history.json (una riga per giorno). Scrive anche
 docs/data/products.json (elenco per la dashboard) e docs/data/status.json
 (data dell'ultima rilevazione riuscita, usata da run-local.sh).
+
+Se è configurato ntfy (file ntfy.conf o variabile NTFY_TOPIC) manda una notifica
+quando un prodotto scende sotto il suo obiettivo o tocca un nuovo minimo storico.
 Solo libreria standard: nessuna dipendenza.
 """
 import html
 import json
+import os
 import re
 import statistics
 import sys
@@ -19,7 +23,10 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-DATA = Path(__file__).parent / "docs" / "data"
+ROOT = Path(__file__).parent
+DATA = ROOT / "docs" / "data"
+NTFY_CONF = ROOT / "ntfy.conf"  # locale, escluso da git: il topic non va nel repo pubblico
+DASHBOARD = "https://webgoods.github.io/price-tracker/"
 UA = "Mozilla/5.0 (X11; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0"
 TOP_N = 10
 PAUSE = 3  # secondi tra una richiesta e l'altra, per non farsi bloccare
@@ -187,6 +194,7 @@ def history_row(today, clean):
 
 
 def save_product(product, clean, status, now, today):
+    """Salva offerte e storico; restituisce lo storico dei giorni precedenti (per gli avvisi)."""
     folder = DATA / product["id"]
     folder.mkdir(parents=True, exist_ok=True)
     rows = [{"rank": i + 1, **o} for i, o in enumerate(clean)]
@@ -196,16 +204,111 @@ def save_product(product, clean, status, now, today):
 
     hist_path = folder / "history.json"
     history = json.loads(hist_path.read_text()) if hist_path.exists() else []
-    history = [h for h in history if h["date"] != today]
-    history.append(history_row(today, clean))
-    history.sort(key=lambda h: h["date"])
+    before = [h for h in history if h["date"] != today]
+    history = sorted(before + [history_row(today, clean)], key=lambda h: h["date"])
     hist_path.write_text(json.dumps(history, ensure_ascii=False, indent=1))
+    return [h for h in before if h["date"] < today]
+
+
+# ---------- Notifiche (ntfy) ----------
+
+def fmt_eur(v):
+    """869.79 -> '869,79 €'"""
+    return f"{v:,.2f} €".replace(",", "X").replace(".", ",").replace("X", ".")
+
+
+def fmt_day(d):
+    return f"{d[8:10]}/{d[5:7]}"
+
+
+def ntfy_settings():
+    """Legge ntfy.conf (righe chiave=valore) e le variabili NTFY_TOPIC / NTFY_SERVER.
+
+    Restituisce None se il topic non è configurato: in quel caso niente notifiche.
+    """
+    conf = {"server": "https://ntfy.sh", "dashboard": DASHBOARD}
+    if NTFY_CONF.exists():
+        for line in NTFY_CONF.read_text().splitlines():
+            key, sep, value = line.partition("=")
+            if sep and not line.lstrip().startswith("#"):
+                conf[key.strip().lower()] = value.strip()
+    for key in ("topic", "server"):
+        if os.environ.get("NTFY_" + key.upper()):
+            conf[key] = os.environ["NTFY_" + key.upper()]
+    return conf if conf.get("topic") else None
+
+
+def build_alert(product, before, clean):
+    """Messaggio di avviso per un prodotto, oppure None se non c'è niente di nuovo.
+
+    Avvisa quando il prezzo minimo di oggi:
+    - è sotto (o pari) all'obiettivo, ed è la prima volta o è sceso ancora rispetto all'ultima rilevazione;
+    - è un nuovo minimo storico (strettamente più basso di tutti i giorni precedenti).
+    """
+    price, best = clean[0]["price"], clean[0]
+    target = product.get("target")
+    last = before[-1] if before else None
+    reasons, priority = [], 3
+
+    if target and price <= target and (last is None or last["min_price"] > target or price < last["min_price"]):
+        gap = target - price
+        reasons.append(f"Sotto l'obiettivo di {fmt_eur(target)}" + (f" di {fmt_eur(gap)}" if gap else ""))
+        priority = 4
+    if before:
+        low = min(before, key=lambda h: h["min_price"])
+        if price < low["min_price"]:
+            reasons.append(f"Nuovo minimo storico (prima {fmt_eur(low['min_price'])} il {fmt_day(low['date'])})")
+    if not reasons:
+        return None
+
+    return {
+        "title": f"{product['name']}: {fmt_eur(price)}",
+        "message": "\n".join(reasons + [f"{best['shop']} · {best['model']}"]),
+        "priority": priority,
+        "tags": ["moneybag"] if priority == 4 else ["chart_with_downwards_trend"],
+        "click": best["url"],
+        "price": price,
+    }
+
+
+def send_ntfy(conf, alert):
+    """Pubblica una notifica in formato JSON (accetta titoli con € e accenti)."""
+    body = {"topic": conf["topic"], "title": alert["title"], "message": alert["message"],
+            "priority": alert.get("priority", 3), "tags": alert.get("tags", [])}
+    if alert.get("click"):
+        body["click"] = alert["click"]
+    if conf.get("dashboard"):
+        body["actions"] = [{"action": "view", "label": "Dashboard", "url": conf["dashboard"]}]
+    req = urllib.request.Request(conf["server"].rstrip("/") + "/", data=json.dumps(body).encode(),
+                                 headers={"Content-Type": "application/json"}, method="POST")
+    with urllib.request.urlopen(req, timeout=15) as r:
+        r.read()
+
+
+def notify(alerts, sent_today):
+    """Manda gli avvisi non ancora mandati oggi allo stesso prezzo. Restituisce quelli inviati."""
+    conf = ntfy_settings()
+    sent = dict(sent_today)
+    if not conf:
+        if alerts:
+            print(f"{len(alerts)} avvisi, ma ntfy non è configurato (vedi README).")
+        return sent
+    for pid, alert in alerts.items():
+        if sent.get(pid) == alert["price"]:
+            continue  # già avvisato oggi a questo prezzo (es. rilevazione rifatta con FORCE=1)
+        try:
+            send_ntfy(conf, alert)
+            sent[pid] = alert["price"]
+            print(f"Notifica inviata: {alert['title']}")
+        except Exception as e:  # una notifica fallita non deve far fallire la rilevazione
+            print(f"Notifica non inviata ({alert['title']}): {e}", file=sys.stderr)
+    return sent
 
 
 def main(only=None):
     now = datetime.now(timezone.utc)
     today = now.astimezone(ZoneInfo("Europe/Rome")).date().isoformat()  # giorno italiano
-    report, updated = {}, []
+    report, updated, alerts = {}, [], {}
 
     for product in PRODUCTS:
         if only and product["id"] not in only:
@@ -225,8 +328,11 @@ def main(only=None):
         clean = clean_offers(product, offers)
         report[product["id"]] = {"sources": status, "offers": len(clean)}
         if clean:
-            save_product(product, clean, status, now, today)
+            before = save_product(product, clean, status, now, today)
             updated.append(product["id"])
+            alert = build_alert(product, before, clean)
+            if alert:
+                alerts[product["id"]] = alert
             print(f"{product['name']}: {len(clean)} offerte, minimo {clean[0]['price']} € "
                   f"({clean[0]['shop']}) {status}")
         else:
@@ -242,13 +348,32 @@ def main(only=None):
         print("Nessun prodotto aggiornato: probabilmente i negozi bloccano la lettura.", file=sys.stderr)
         sys.exit(1)
 
-    (DATA / "status.json").write_text(json.dumps(
-        {"date": today, "updated": now.isoformat(timespec="seconds"), "products": report},
+    status_path = DATA / "status.json"
+    old = json.loads(status_path.read_text()) if status_path.exists() else {}
+    sent_today = old.get("notified", {}) if old.get("date") == today else {}
+    sent = notify(alerts, sent_today)
+
+    status_path.write_text(json.dumps(
+        {"date": today, "updated": now.isoformat(timespec="seconds"), "products": report,
+         "notified": sent},
         ensure_ascii=False, indent=1))
     print(f"{today}: aggiornati {len(updated)} prodotti su {len(report)}")
 
 
+def test_notify():
+    conf = ntfy_settings()
+    if not conf:
+        sys.exit(f"ntfy non configurato: manca il topic in {NTFY_CONF.name} o in NTFY_TOPIC.")
+    send_ntfy(conf, {"title": "Tracker prezzi: prova", "priority": 3, "tags": ["white_check_mark"],
+                     "message": "Se leggi questo messaggio, le notifiche funzionano."})
+    print(f"Notifica di prova inviata a {conf['server']} (topic configurato).")
+
+
 if __name__ == "__main__":
-    # python tracker.py              -> tutti i prodotti
-    # python tracker.py rx9070xt     -> solo quelli indicati
-    main(set(sys.argv[1:]) or None)
+    # python tracker.py                 -> tutti i prodotti
+    # python tracker.py rx9070xt        -> solo quelli indicati
+    # python tracker.py --test-notify   -> manda solo una notifica di prova
+    if "--test-notify" in sys.argv:
+        test_notify()
+    else:
+        main(set(sys.argv[1:]) or None)

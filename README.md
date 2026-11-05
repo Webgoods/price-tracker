@@ -43,6 +43,31 @@ Il workflow GitHub **Rileva prezzi** resta solo per l'avvio manuale.
 
 Nessuna dipendenza: basta Python 3.9 o successivo.
 
+## Notifiche sul telefono (ntfy)
+
+Il tracker manda una notifica con [ntfy](https://ntfy.sh) quando il prezzo minimo di un prodotto:
+
+- scende sotto il suo obiettivo (`target`): la prima volta, e poi solo se scende ancora;
+- tocca un nuovo minimo storico.
+
+Toccando la notifica si apre l'offerta; il pulsante *Dashboard* apre questa pagina.
+Lo stesso avviso non viene ripetuto nello stesso giorno allo stesso prezzo (anche con `FORCE=1`).
+
+Configurazione, una volta per PC:
+
+```bash
+scripts/setup-ntfy.sh            # primo PC: genera un topic casuale e crea ntfy.conf
+scripts/setup-ntfy.sh <topic>    # altri PC: usa lo stesso topic
+```
+
+Sul telefono installa l'app ntfy e iscriviti al topic che lo script stampa; lo script poi
+manda una notifica di prova (`python3 tracker.py --test-notify` la rimanda quando vuoi).
+
+Su ntfy.sh i topic non hanno password: chi conosce il nome può leggerli, quindi il topic
+sta in `ntfy.conf`, che è escluso da git, e non nel repo pubblico. Senza `ntfy.conf` il
+tracker funziona come prima, senza notifiche. In alternativa al file si può usare la
+variabile `NTFY_TOPIC` (il workflow manuale la legge dal segreto `NTFY_TOPIC` del repo).
+
 ## Aggiungere o cambiare un prodotto
 
 In `tracker.py`, `PRODUCTS` ha una voce per prodotto: le ricerche da fare nei negozi

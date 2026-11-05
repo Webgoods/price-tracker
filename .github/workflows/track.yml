@@ -24,6 +24,9 @@ jobs:
 
       - name: Rileva prezzi
         run: python tracker.py
+        env:
+          # facoltativo: segreto del repo con il topic ntfy per le notifiche
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
 
       - name: Salva i dati
         run: |

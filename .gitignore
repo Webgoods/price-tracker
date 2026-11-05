@@ -1,1 +1,3 @@
 __pycache__/
+# configurazione locale delle notifiche: contiene il topic privato
+ntfy.conf
