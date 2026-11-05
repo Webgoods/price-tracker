@@ -1,8 +1,9 @@
 {
- "updated": "2026-11-05T08:53:41+00:00",
+ "updated": "2026-11-05T09:29:37+00:00",
  "sources": {
   "Amazon.it": "ok (30)",
-  "MediaWorld": "ok (12)"
+  "MediaWorld": "ok (12)",
+  "Trovaprezzi": "ok (2)"
  },
  "offers": [
   {
@@ -28,41 +29,55 @@
   },
   {
    "rank": 4,
+   "model": "Beelink Mini PC SER8 AMD Ryzen 7 8745HS (8C/16T, fino a 4.9GHz), 32GB DDR5 RAM, 512GB M.2 PCIe4.0 SSD, 4K Tripla Visualizzazione, USB4, HDMI, DP1.4, BT5.2, WiFi6, 2.5G LAN — Amazon.it Marketplace",
+   "shop": "Trovaprezzi",
+   "price": 819.0,
+   "url": "https://www.trovaprezzi.it/goto/930349355?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxVXhyNUlxMjhTcFhVRlVhNktlR3RwakhCeFdrbktmeHBRPT01&search=QmVlbGluayBTRVI4CTE1&pos=1&nb_results=2&pc=2&sc=0&tc=0&offer_ss=pc&tr=prodotto"
+  },
+  {
+   "rank": 5,
    "model": "Beelink SER8 Mini PC, AMD Ryzen 8745HS (8 core/16 core, fino a 4.9 GHz), 32 GB di RAM DDR5, SSD 1 TB, 3 schermi (HDMI/DP/USB4), Wi-FI 6/BT5.2/LAN 2,5 GHz, grigio",
    "shop": "Amazon.it",
    "price": 899.0,
    "url": "https://www.amazon.it/dp/B0GSZ2LYPZ"
   },
   {
-   "rank": 5,
+   "rank": 6,
    "model": "Beelink SER8 Mini Gaming PC, Processore Ryzen 7 8745HS 8 core 16 thread 4,9 GHz, RAM 32G DDR5, SSD 1T, 4K@120Hz, USB4.0/USB3.2/DP/HDMI/ 2.5G LAN/WiFi6 BT5.2/Grigio",
    "shop": "Amazon.it",
    "price": 899.0,
    "url": "https://www.amazon.it/dp/B0GSZ7PGTF"
   },
   {
-   "rank": 6,
+   "rank": 7,
    "model": "Beelink SER8 Mini PC, AMD Ryzen 8745HS (8 core/16 core, fino a 4.9 GHz), 32 GB di RAM DDR5, SSD 1 TB, 3 schermi (HDMI/DP/USB4), Wi-FI 6/BT5.2/LAN 2,5 GHz, Argento",
    "shop": "Amazon.it",
    "price": 899.0,
    "url": "https://www.amazon.it/dp/B0GSZ5NKQB"
   },
   {
-   "rank": 7,
+   "rank": 8,
    "model": "Beelink Mini PC gaming SER8, Ryzen 7 8745HS, 32GB DDR5, SSD NVMe 1TB, mini computer desktop con supporto per tre schermi 4K, mini computer per ufficio, LAN 2,5G, Wi-Fi 6, BT 5.2, HDMI + DP + USB4",
    "shop": "Amazon.it",
    "price": 899.0,
    "url": "https://www.amazon.it/dp/B0GYD9FKL2"
   },
   {
-   "rank": 8,
+   "rank": 9,
    "model": "Beelink SER8 Mini Gaming PC, Processore Ryzen 7 8745HS 8 core 16 thread 4,9 GHz, RAM 32G DDR5, SSD 1T, tripla uscita schermo 4K@120Hz, USB4.0/USB3.2/DP/HDMI/ 2.5G LAN/WiFi6 BT5.2/Argento",
    "shop": "Amazon.it",
    "price": 899.0,
    "url": "https://www.amazon.it/dp/B0GSZ3DHZX"
   },
   {
-   "rank": 9,
+   "rank": 10,
+   "model": "Beelink SER8 Mini Gaming PC, Processore Ryzen 7 8745HS 8 core 16 thread 4,9 GHz, RAM 32G DDR5, SSD 1T, tripla uscita schermo 4K@120Hz, USB4.0/USB3.2/DP/HDMI/ 2.5G LAN/WiFi6 BT5.2/Argento — Amazon.it Marketplace",
+   "shop": "Trovaprezzi",
+   "price": 899.0,
+   "url": "https://www.trovaprezzi.it/goto/957529798?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxVXhyNUlxMjhTcFhVRlVhNktlR3RwakhCeFdrbktmeHBRPT01&search=QmVlbGluayBTRVI4CTE1&pos=2&nb_results=2&pc=2&sc=0&tc=0&offer_ss=pc&tr=prodotto"
+  },
+  {
+   "rank": 11,
    "model": "Beelink MINI DESKTOP SER8 8745 HS Gaming, AMD, Ryzen™ 7 8745 HS 8C/16T 4.9GHz Max Turbo Frequency, 4.9 GHz, Radeon™ 780M, RAM 32 GB, 1000 GB SSD",
    "shop": "MediaWorld",
    "price": 997.49,
