@@ -1,3 +1,5 @@
 __pycache__/
-# configurazione locale delle notifiche: contiene il topic privato
-ntfy.conf
+# configurazione locale (topic ntfy, Chrome): non va nel repo pubblico
+tracker.conf
+# copie delle pagine lette con Chrome, per sistemare la lettura
+debug/

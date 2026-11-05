@@ -259,7 +259,7 @@ function renderGpu(p) {
   charts.gpu = () => lineChart("g-chart", "g-legend", [
     { name: "Minimo", color: css("--accent"), w: 2.5, points: history.map(x => ({ date: x.date, v: x.min_price })) },
     { name: "Media 10 più economiche", color: css("--muted"), w: 1.5, dash: "4 4", points: history.map(x => ({ date: x.date, v: x.avg_top10 })) },
-    ...shops.map((s, i) => ({ name: "Minimo " + s, color: [css("--s2"), css("--s3")][i % 2], w: 1.5,
+    ...shops.map((s, i) => ({ name: "Minimo " + s, color: [css("--s2"), css("--s3"), css("--c4")][i % 3], w: 1.5,
       points: history.map(x => ({ date: x.date, v: x.by_shop?.[s] })) })),
   ], p.target ? [{ name: `Obiettivo ${eur(p.target)}`, color: css("--ok"), v: p.target }] : []);
   $("g-rows").replaceChildren(...(offers?.offers || []).map(o => h("tr", {},

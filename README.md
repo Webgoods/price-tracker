@@ -43,7 +43,18 @@ Il workflow GitHub **Rileva prezzi** resta solo per l'avvio manuale.
 
 Nessuna dipendenza: basta Python 3.9 o successivo.
 
-## Notifiche sul telefono (ntfy)
+## Configurazione locale (`tracker.conf`)
+
+Le due funzioni facoltative qui sotto si configurano in `tracker.conf`, un file locale escluso
+da git (contiene il topic ntfy, che non deve finire nel repo pubblico). Senza questo file il
+tracker funziona come prima: solo Amazon e MediaWorld, nessuna notifica.
+
+```
+ntfy_topic=prezzi-...      # notifiche sul telefono
+chrome=auto                # legge anche Trovaprezzi con Chrome (oppure il comando di Chrome)
+```
+
+### Notifiche sul telefono (ntfy)
 
 Il tracker manda una notifica con [ntfy](https://ntfy.sh) quando il prezzo minimo di un prodotto:
 
@@ -53,20 +64,38 @@ Il tracker manda una notifica con [ntfy](https://ntfy.sh) quando il prezzo minim
 Toccando la notifica si apre l'offerta; il pulsante *Dashboard* apre questa pagina.
 Lo stesso avviso non viene ripetuto nello stesso giorno allo stesso prezzo (anche con `FORCE=1`).
 
-Configurazione, una volta per PC:
-
 ```bash
-scripts/setup-ntfy.sh            # primo PC: genera un topic casuale e crea ntfy.conf
+scripts/setup-ntfy.sh            # primo PC: genera un topic casuale
 scripts/setup-ntfy.sh <topic>    # altri PC: usa lo stesso topic
 ```
 
 Sul telefono installa l'app ntfy e iscriviti al topic che lo script stampa; lo script poi
 manda una notifica di prova (`python3 tracker.py --test-notify` la rimanda quando vuoi).
+Su ntfy.sh i topic non hanno password: chi conosce il nome può leggerli, per questo il topic
+sta solo in `tracker.conf`. Il workflow manuale lo legge dal segreto `NTFY_TOPIC` del repo.
 
-Su ntfy.sh i topic non hanno password: chi conosce il nome può leggerli, quindi il topic
-sta in `ntfy.conf`, che è escluso da git, e non nel repo pubblico. Senza `ntfy.conf` il
-tracker funziona come prima, senza notifiche. In alternativa al file si può usare la
-variabile `NTFY_TOPIC` (il workflow manuale la legge dal segreto `NTFY_TOPIC` del repo).
+### Trovaprezzi con Chrome
+
+Trovaprezzi blocca i lettori automatici semplici. Con `chrome=auto` il tracker apre le sue
+pagine in un Chrome vero (finestra normale, non headless) con un **profilo dedicato**, legge i
+prezzi dai dati strutturati della pagina e richiude Chrome. Tra una pagina e l'altra aspetta
+8-20 secondi. Il profilo dedicato serve perché da Chrome 136 il profilo principale non si può
+comandare da programma; non tocca le tue schede né le tue sessioni.
+
+```bash
+scripts/setup-chrome.sh          # apre il profilo su Trovaprezzi: accetta i cookie e chiudi
+FORCE=1 scripts/run-local.sh     # prova subito
+```
+
+- Se Trovaprezzi chiede una verifica, arriva una notifica ntfy e il tracker aspetta 4 minuti
+  che tu la risolva nella finestra di Chrome; se no salta Trovaprezzi per quel giro.
+- Serve un desktop attivo: dal timer systemd funziona dopo il login grafico.
+- L'ultima pagina letta per ogni prodotto resta in `debug/` (escluso da git), utile se la
+  lettura smette di funzionare.
+- Chrome viene comandato con il protocollo DevTools da `browser.py`, solo libreria standard.
+
+Nota: è comunque una lettura automatica, anche se fatta con un browser vero; le condizioni
+d'uso di Trovaprezzi non la prevedono. Il volume è minimo (una pagina per prodotto al giorno).
 
 ## Aggiungere o cambiare un prodotto
 
@@ -86,4 +115,5 @@ Scrivi in `tracker.py` una funzione che riceve il testo da cercare e restituisce
 blocca la lettura, gli altri vengono salvati comunque; se falliscono tutti,
 l'esecuzione termina con errore e il timer riprova all'ora successiva.
 
-Trovaprezzi, Idealo e Kelkoo non sono usati: bloccano i lettori automatici con un captcha.
+Idealo e Kelkoo non sono usati: bloccano i lettori automatici con un captcha. Trovaprezzi
+si legge solo con Chrome (vedi sopra).

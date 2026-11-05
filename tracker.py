@@ -6,13 +6,16 @@ docs/data/<id>/history.json (una riga per giorno). Scrive anche
 docs/data/products.json (elenco per la dashboard) e docs/data/status.json
 (data dell'ultima rilevazione riuscita, usata da run-local.sh).
 
-Se è configurato ntfy (file ntfy.conf o variabile NTFY_TOPIC) manda una notifica
-quando un prodotto scende sotto il suo obiettivo o tocca un nuovo minimo storico.
+Configurazione locale facoltativa in tracker.conf (escluso da git):
+- ntfy_topic: manda una notifica quando un prodotto scende sotto il suo obiettivo
+  o tocca un nuovo minimo storico (anche con la variabile NTFY_TOPIC);
+- chrome: legge anche Trovaprezzi aprendo le pagine in un Chrome vero (browser.py).
 Solo libreria standard: nessuna dipendenza.
 """
 import html
 import json
 import os
+import random
 import re
 import statistics
 import sys
@@ -25,7 +28,8 @@ from zoneinfo import ZoneInfo
 
 ROOT = Path(__file__).parent
 DATA = ROOT / "docs" / "data"
-NTFY_CONF = ROOT / "ntfy.conf"  # locale, escluso da git: il topic non va nel repo pubblico
+CONF = ROOT / "tracker.conf"  # locale, escluso da git: il topic ntfy non va nel repo pubblico
+DEBUG = ROOT / "debug"  # copie delle pagine lette col browser, per sistemare la lettura
 DASHBOARD = "https://webgoods.github.io/price-tracker/"
 UA = "Mozilla/5.0 (X11; Linux x86_64; rv:131.0) Gecko/20100101 Firefox/131.0"
 TOP_N = 10
@@ -44,6 +48,7 @@ PRODUCTS = [
     {
         "id": "rx9070xt", "group": "gpu", "name": "Radeon RX 9070 XT", "target": 750,
         "amazon": "radeon rx 9070 xt", "mediaworld": "rx 9070 xt",
+        "trovaprezzi": "https://www.trovaprezzi.it/prezzo_schede-grafiche_amd_rx_9070_xt.aspx",
         "match": [r"9070\s*-?\s*XT"],
         "exclude": USED + r"|waterblock|water block|backplate|cavo|supporto|staffa|bracket|riser|"
                           r"pc gaming|pc desktop|computer|notebook",
@@ -52,35 +57,35 @@ PRODUCTS = [
     {
         "id": "gmktec-k8-plus", "group": "minipc", "name": "GMKtec K8 Plus", "target": 600,
         "specs": "Ryzen 7 8845HS · 2× SO-DIMM DDR5 · 2× M.2 · 2× LAN 2.5G · OCuLink · Win 11 Pro",
-        "amazon": "gmktec k8 plus 8845hs 32gb", "mediaworld": "gmktec k8 plus",
+        "amazon": "gmktec k8 plus 8845hs 32gb", "mediaworld": "gmktec k8 plus", "trovaprezzi": "gmktec k8 plus",
         "match": [r"gmktec", r"K8\s*Plus", r"32\s*G"],
         "exclude": MINIPC_EXCLUDE, "min_price": 250,
     },
     {
         "id": "beelink-ser8", "group": "minipc", "name": "Beelink SER8", "target": 600,
         "specs": "Ryzen 7 8845HS/8745HS · 2× SO-DIMM DDR5 · 2× M.2 · 1× LAN 2.5G · molto silenzioso · Win 11 Pro",
-        "amazon": "beelink ser8 32gb", "mediaworld": "beelink ser8",
+        "amazon": "beelink ser8 32gb", "mediaworld": "beelink ser8", "trovaprezzi": "beelink ser8",
         "match": [r"beelink", r"SER\s*8(?!\d)", r"32\s*G"],
         "exclude": MINIPC_EXCLUDE, "min_price": 250,
     },
     {
         "id": "geekom-a8-max", "group": "minipc", "name": "GEEKOM A8 Max", "target": 650,
         "specs": "Ryzen 7 8845HS/8745HS · 2× SO-DIMM DDR5 · 1× M.2 · 2× LAN 2.5G · garanzia 3 anni · Win 11 Pro",
-        "amazon": "geekom a8 max", "mediaworld": "geekom a8 max",
+        "amazon": "geekom a8 max", "mediaworld": "geekom a8 max", "trovaprezzi": "geekom a8 max",
         "match": [r"geekom", r"A8\s*Max", r"32\s*G"],
         "exclude": MINIPC_EXCLUDE, "min_price": 250,
     },
     {
         "id": "gmktec-m7-ultra", "group": "minipc", "name": "GMKtec M7 Ultra", "target": 520,
         "specs": "Ryzen 7 PRO 6850U · DDR5 dual channel · 2× M.2 · 2× LAN 2.5G Intel · OCuLink · Win 11 Pro",
-        "amazon": "gmktec m7 ultra 32gb", "mediaworld": "gmktec m7",
+        "amazon": "gmktec m7 ultra 32gb", "mediaworld": "gmktec m7", "trovaprezzi": "gmktec m7",
         "match": [r"gmktec", r"\bM7\b", r"32\s*G"],
         "exclude": MINIPC_EXCLUDE, "min_price": 250,
     },
     {
         "id": "nipogi-am06-pro", "group": "minipc", "name": "NiPoGi AM06 Pro", "target": 450,
         "specs": "Ryzen 7 7730U · 32 GB DDR4 espandibile · M.2 + slot 2,5\" · 2× LAN 1G · Win 11 Pro",
-        "amazon": "nipogi am06 pro 32gb", "mediaworld": "nipogi am06 pro",
+        "amazon": "nipogi am06 pro 32gb", "mediaworld": "nipogi am06 pro", "trovaprezzi": "nipogi am06 pro",
         "match": [r"AM06\s*Pro", r"32\s*G"],
         "exclude": MINIPC_EXCLUDE, "min_price": 250,
     },
@@ -157,6 +162,125 @@ def parse_mediaworld(s):
 SHOPS = {"Amazon.it": ("amazon", amazon), "MediaWorld": ("mediaworld", mediaworld)}
 
 
+# ---------- Trovaprezzi, letto con un Chrome vero (browser.py) ----------
+
+CHALLENGE_WORDS = ("captcha", "datadome", "cf-chl", "challenge-platform", "non sei un robot",
+                   "verifica di sicurezza", "are you a robot", "access denied", "accesso negato")
+CHALLENGE_WAIT = 240  # secondi per risolvere a mano una verifica nella finestra di Chrome
+
+
+def trovaprezzi_url(query):
+    if query.startswith("http"):
+        return query
+    return ("https://www.trovaprezzi.it/categoria.aspx?"
+            + urllib.parse.urlencode({"libera": query, "id": -1, "sbox": "sb"}))
+
+
+def _walk(node):
+    if isinstance(node, list):
+        for x in node:
+            yield from _walk(x)
+    elif isinstance(node, dict):
+        yield node
+        for v in node.values():
+            if isinstance(v, (dict, list)):
+                yield from _walk(v)
+
+
+def _types(node):
+    t = node.get("@type", [])
+    return {t} if isinstance(t, str) else set(t)
+
+
+def parse_trovaprezzi(s, page_url=""):
+    """Offerte dai dati strutturati (JSON-LD) della pagina: Product con Offer/AggregateOffer."""
+    out = []
+    for m in re.finditer(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', s, re.S):
+        try:
+            data = json.loads(html.unescape(m.group(1)))
+        except json.JSONDecodeError:
+            continue
+        for node in _walk(data):
+            if "Product" not in _types(node) or not node.get("name"):
+                continue
+            offers = node.get("offers") or []
+            offers = offers if isinstance(offers, list) else [offers]
+            for offer in offers:
+                inner = offer.get("offers") if isinstance(offer.get("offers"), list) else [offer]
+                for o in inner:
+                    price = o.get("price") or o.get("lowPrice")
+                    if price is None:
+                        continue
+                    seller = (o.get("seller") or {}).get("name") if isinstance(o.get("seller"), dict) else None
+                    if not seller and "AggregateOffer" in _types(o):
+                        seller = f"{o.get('offerCount', 'più')} negozi"
+                    title = " ".join(str(node["name"]).split())
+                    out.append({"model": f"{title} — {seller}" if seller else title, "shop": "Trovaprezzi",
+                                "price": float(str(price).replace(",", ".")),
+                                "url": o.get("url") or node.get("url") or page_url})
+    return out
+
+
+def looks_like_challenge(s):
+    low = s.lower()
+    return any(w in low for w in CHALLENGE_WORDS)
+
+
+class BrowserSession:
+    """Apre Chrome solo quando serve (alla prima pagina) e lo richiude alla fine."""
+
+    def __init__(self, command):
+        self.command, self.chrome, self.tab, self.pages = command, None, None, 0
+
+    def trovaprezzi(self, query, product_id="pagina"):
+        import browser  # solo qui: chi non usa Chrome non ne ha bisogno
+        if self.chrome is None:
+            self.chrome = browser.Chrome(self.command)
+            self.tab = self.chrome.new_tab()
+        elif self.pages:
+            time.sleep(random.uniform(8, 20))  # ritmo da persona, non da robot
+        self.pages += 1
+        url = trovaprezzi_url(query)
+        self.tab.goto(url)
+        page = self.tab.html()
+        offers = parse_trovaprezzi(page, url)
+        if not offers and looks_like_challenge(page):
+            warn("Trovaprezzi chiede una verifica",
+                 f"Risolvila nella finestra di Chrome del tracker entro {CHALLENGE_WAIT // 60} minuti.")
+            end = time.time() + CHALLENGE_WAIT
+            while time.time() < end and not offers:
+                time.sleep(5)
+                page = self.tab.html()
+                offers = parse_trovaprezzi(page, url)
+                if not offers and not looks_like_challenge(page):
+                    self.tab.goto(url)  # verifica superata: ricarico la pagina cercata
+                    page = self.tab.html()
+                    offers = parse_trovaprezzi(page, url)
+                    break
+            if not offers and looks_like_challenge(page):
+                raise RuntimeError("verifica non risolta")
+        DEBUG.mkdir(exist_ok=True)
+        (DEBUG / f"trovaprezzi-{product_id}.html").write_text(page)
+        return offers
+
+    def close(self):
+        if self.chrome:
+            self.chrome.close()
+
+
+def browser_session():
+    """Una BrowserSession se in tracker.conf c'è chrome=auto (o un comando), altrimenti None."""
+    setting = local_settings().get("chrome", "")
+    if not setting or setting in ("off", "0", "no"):
+        return None
+    import browser
+    command = browser.find_chrome(setting)
+    if not command:
+        print("Chrome non trovato: Trovaprezzi saltato.", file=sys.stderr)
+        return None
+    return BrowserSession(command)
+
+
 def keep(product, offer):
     """True se l'offerta è il prodotto giusto, nuovo e con un prezzo plausibile."""
     title = offer["model"]
@@ -221,17 +345,26 @@ def fmt_day(d):
     return f"{d[8:10]}/{d[5:7]}"
 
 
+def local_settings():
+    """Legge tracker.conf: righe chiave=valore, # per i commenti."""
+    conf = {}
+    if CONF.exists():
+        for line in CONF.read_text().splitlines():
+            key, sep, value = line.partition("=")
+            if sep and not line.lstrip().startswith("#"):
+                conf[key.strip().lower()] = value.split("#")[0].strip()
+    return conf
+
+
 def ntfy_settings():
-    """Legge ntfy.conf (righe chiave=valore) e le variabili NTFY_TOPIC / NTFY_SERVER.
+    """Topic e server ntfy da tracker.conf o dalle variabili NTFY_TOPIC / NTFY_SERVER.
 
     Restituisce None se il topic non è configurato: in quel caso niente notifiche.
     """
-    conf = {"server": "https://ntfy.sh", "dashboard": DASHBOARD}
-    if NTFY_CONF.exists():
-        for line in NTFY_CONF.read_text().splitlines():
-            key, sep, value = line.partition("=")
-            if sep and not line.lstrip().startswith("#"):
-                conf[key.strip().lower()] = value.strip()
+    local = local_settings()
+    conf = {"server": local.get("ntfy_server") or "https://ntfy.sh",
+            "topic": local.get("ntfy_topic"),
+            "dashboard": local.get("dashboard") or DASHBOARD}
     for key in ("topic", "server"):
         if os.environ.get("NTFY_" + key.upper()):
             conf[key] = os.environ["NTFY_" + key.upper()]
@@ -285,6 +418,17 @@ def send_ntfy(conf, alert):
         r.read()
 
 
+def warn(title, message):
+    """Notifica di servizio immediata (es. verifica da risolvere); silenziosa se ntfy non c'è."""
+    conf = ntfy_settings()
+    print(f"{title}: {message}", file=sys.stderr)
+    if conf:
+        try:
+            send_ntfy(conf, {"title": title, "message": message, "priority": 4, "tags": ["warning"]})
+        except Exception as e:
+            print(f"Notifica non inviata: {e}", file=sys.stderr)
+
+
 def notify(alerts, sent_today):
     """Manda gli avvisi non ancora mandati oggi allo stesso prezzo. Restituisce quelli inviati."""
     conf = ntfy_settings()
@@ -305,39 +449,51 @@ def notify(alerts, sent_today):
     return sent
 
 
+def collect(product, session, report, updated, alerts, now, today):
+    """Legge un prodotto da tutti i negozi, salva i dati e prepara l'eventuale avviso."""
+    shops = dict(SHOPS)
+    if session:
+        shops["Trovaprezzi"] = ("trovaprezzi", lambda q: session.trovaprezzi(q, product["id"]))
+    offers, status = [], {}
+    for shop, (key, fn) in shops.items():
+        if not product.get(key):
+            continue
+        try:
+            found = fn(product[key])
+            status[shop] = f"ok ({len(found)})"
+            offers += found
+        except Exception as e:  # un negozio che fallisce non ferma gli altri
+            status[shop] = f"errore: {e}"
+        time.sleep(PAUSE)
+
+    clean = clean_offers(product, offers)
+    report[product["id"]] = {"sources": status, "offers": len(clean)}
+    if clean:
+        before = save_product(product, clean, status, now, today)
+        updated.append(product["id"])
+        alert = build_alert(product, before, clean)
+        if alert:
+            alerts[product["id"]] = alert
+        print(f"{product['name']}: {len(clean)} offerte, minimo {clean[0]['price']} € "
+              f"({clean[0]['shop']}) {status}")
+    else:
+        # niente offerte valide oggi: tengo i dati di ieri
+        print(f"{product['name']}: nessuna offerta valida {status}", file=sys.stderr)
+
+
 def main(only=None):
     now = datetime.now(timezone.utc)
     today = now.astimezone(ZoneInfo("Europe/Rome")).date().isoformat()  # giorno italiano
     report, updated, alerts = {}, [], {}
-
-    for product in PRODUCTS:
-        if only and product["id"] not in only:
-            continue
-        offers, status = [], {}
-        for shop, (key, fn) in SHOPS.items():
-            if not product.get(key):
+    session = browser_session()
+    try:
+        for product in PRODUCTS:
+            if only and product["id"] not in only:
                 continue
-            try:
-                found = fn(product[key])
-                status[shop] = f"ok ({len(found)})"
-                offers += found
-            except Exception as e:  # un negozio che fallisce non ferma gli altri
-                status[shop] = f"errore: {e}"
-            time.sleep(PAUSE)
-
-        clean = clean_offers(product, offers)
-        report[product["id"]] = {"sources": status, "offers": len(clean)}
-        if clean:
-            before = save_product(product, clean, status, now, today)
-            updated.append(product["id"])
-            alert = build_alert(product, before, clean)
-            if alert:
-                alerts[product["id"]] = alert
-            print(f"{product['name']}: {len(clean)} offerte, minimo {clean[0]['price']} € "
-                  f"({clean[0]['shop']}) {status}")
-        else:
-            # niente offerte valide oggi: tengo i dati di ieri
-            print(f"{product['name']}: nessuna offerta valida {status}", file=sys.stderr)
+            collect(product, session, report, updated, alerts, now, today)
+    finally:
+        if session:
+            session.close()
 
     (DATA / "products.json").write_text(json.dumps(
         {"groups": GROUPS,
@@ -363,7 +519,7 @@ def main(only=None):
 def test_notify():
     conf = ntfy_settings()
     if not conf:
-        sys.exit(f"ntfy non configurato: manca il topic in {NTFY_CONF.name} o in NTFY_TOPIC.")
+        sys.exit(f"ntfy non configurato: manca ntfy_topic in {CONF.name} o la variabile NTFY_TOPIC.")
     send_ntfy(conf, {"title": "Tracker prezzi: prova", "priority": 3, "tags": ["white_check_mark"],
                      "message": "Se leggi questo messaggio, le notifiche funzionano."})
     print(f"Notifica di prova inviata a {conf['server']} (topic configurato).")
