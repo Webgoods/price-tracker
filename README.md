@@ -78,7 +78,8 @@ sta solo in `tracker.conf`. Il workflow manuale lo legge dal segreto `NTFY_TOPIC
 
 Trovaprezzi blocca i lettori automatici semplici. Con `chrome=auto` il tracker apre le sue
 pagine in un Chrome vero (finestra normale, non headless) con un **profilo dedicato**, legge i
-prezzi dai dati strutturati della pagina e richiude Chrome. Tra una pagina e l'altra aspetta
+prezzi dalla lista delle offerte (totale con spedizione; se la ricerca propone una categoria, apre
+quella principale) e richiude Chrome. Tra una pagina e l'altra aspetta
 8-20 secondi. Il profilo dedicato serve perché da Chrome 136 il profilo principale non si può
 comandare da programma; non tocca le tue schede né le tue sessioni.
 

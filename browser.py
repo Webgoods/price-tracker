@@ -197,7 +197,7 @@ class Chrome:
             self.proc = subprocess.Popen(
                 command + [f"--remote-debugging-port={PORT}", "--remote-debugging-address=127.0.0.1",
                            f"--user-data-dir={profile}", "--no-first-run",
-                           "--no-default-browser-check", "--new-window", url],
+                           "--no-default-browser-check", "--hide-crash-restore-bubble", "--new-window", url],
                 stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
             for _ in range(60):
                 time.sleep(0.5)
@@ -220,8 +220,8 @@ class Chrome:
         if self.proc is None:
             if self.tab_id:  # Chrome non l'abbiamo aperto noi: chiudiamo solo la nostra scheda
                 try:
-                    _http(f"/json/close/{self.tab_id}")
-                except OSError:
+                    _local.open(f"http://127.0.0.1:{PORT}/json/close/{self.tab_id}", timeout=5).close()
+                except OSError:  # risponde "Target is closing", non JSON: niente _http
                     pass
             return
         try:

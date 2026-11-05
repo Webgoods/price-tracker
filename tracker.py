@@ -164,8 +164,11 @@ SHOPS = {"Amazon.it": ("amazon", amazon), "MediaWorld": ("mediaworld", mediaworl
 
 # ---------- Trovaprezzi, letto con un Chrome vero (browser.py) ----------
 
-CHALLENGE_WORDS = ("captcha", "datadome", "cf-chl", "challenge-platform", "non sei un robot",
-                   "verifica di sicurezza", "are you a robot", "access denied", "accesso negato")
+# Segni di una pagina di verifica vera. Non "datadome" né "challenge-platform": gli script
+# antibot sono in tutte le pagine normali di Trovaprezzi e davano falsi allarmi.
+CHALLENGE_WORDS = ("captcha-delivery.com", "cf-chl", "just a moment", "ci siamo quasi",
+                   "attention required", "non sei un robot", "verifica di sicurezza",
+                   "are you a robot", "access denied", "accesso negato")
 CHALLENGE_WAIT = 240  # secondi per risolvere a mano una verifica nella finestra di Chrome
 
 
@@ -192,7 +195,39 @@ def _types(node):
     return {t} if isinstance(t, str) else set(t)
 
 
+def _text(fragment):
+    return " ".join(html.unescape(re.sub(r"<[^>]+>", " ", fragment)).split())
+
+
+def parse_trovaprezzi_listing(s):
+    """Offerte dalla lista delle pagine di ricerca (<li id="offer-...">): nome, negozio, totale."""
+    out = []
+    for block in re.split(r'<li id="offer-', s)[1:]:
+        block = block.split("</li>", 1)[0] if "</li>" in block else block[:8000]
+        name = re.search(r'class="item_name[^"]*"[^>]*>(.*?)</a>', block, re.S)
+        shop = re.search(r'class="merchant_name"[^>]*>(.*?)</span>', block, re.S)
+        total = re.search(r'class="item_total_price"[^>]*>(.*?)</div>', block, re.S) or \
+            re.search(r'class="item_basic_price"[^>]*>(.*?)</div>', block, re.S)
+        link = re.search(r'class="item_name[^"]*"[^>]*href="([^"]+)"', block) or re.search(r'href="(/goto/[^"]+)"', block)
+        if not (name and total):
+            continue
+        price = parse_eur(_text(total.group(1)).replace("Tot.", ""))
+        if not price:
+            continue
+        seller = _text(shop.group(1)) if shop else ""
+        title = _text(name.group(1))
+        out.append({"model": f"{title} — {seller}" if seller else title, "shop": "Trovaprezzi", "price": price,
+                    "url": urllib.parse.urljoin("https://www.trovaprezzi.it/", html.unescape(link.group(1))) if link else ""})
+    return out
+
+
 def parse_trovaprezzi(s, page_url=""):
+    """Offerte di una pagina Trovaprezzi: dalla lista delle offerte (pagine di ricerca e
+    categoria, prezzo totale con spedizione) o, in mancanza, dai dati strutturati JSON-LD."""
+    return parse_trovaprezzi_listing(s) or _trovaprezzi_jsonld(s, page_url)
+
+
+def _trovaprezzi_jsonld(s, page_url=""):
     """Offerte dai dati strutturati (JSON-LD) della pagina: Product con Offer/AggregateOffer."""
     out = []
     for m in re.finditer(r'<script[^>]*type="application/ld\+json"[^>]*>(.*?)</script>', s, re.S):
@@ -222,8 +257,17 @@ def parse_trovaprezzi(s, page_url=""):
 
 
 def looks_like_challenge(s):
+    if '<li id="offer-' in s:  # c'è la lista delle offerte: non è una verifica
+        return False
     low = s.lower()
     return any(w in low for w in CHALLENGE_WORDS)
+
+
+def main_category(s):
+    """Link alla categoria principale di una pagina di ricerca senza offerte, se c'è."""
+    i = s.find('class="most_popular"')
+    m = re.search(r'<a class="relevant_item"[^>]*href="([^"]+)"', s[i:i + 3000]) if i >= 0 else None
+    return urllib.parse.urljoin("https://www.trovaprezzi.it/", html.unescape(m.group(1))) if m else None
 
 
 class BrowserSession:
@@ -259,6 +303,14 @@ class BrowserSession:
                     break
             if not offers and looks_like_challenge(page):
                 raise RuntimeError("verifica non risolta")
+        category = main_category(page)
+        if not offers and category:
+            # pagina "scegli la categoria": apro quella principale proposta da Trovaprezzi
+            time.sleep(random.uniform(3, 6))
+            url = category
+            self.tab.goto(url)
+            page = self.tab.html()
+            offers = parse_trovaprezzi(page, url)
         DEBUG.mkdir(exist_ok=True)
         (DEBUG / f"trovaprezzi-{product_id}.html").write_text(page)
         return offers
