@@ -1,38 +1,24 @@
 {
- "updated": "2026-11-05T09:29:37+00:00",
+ "updated": "2026-11-06T18:46:14+00:00",
  "sources": {
-  "Amazon.it": "ok (18)",
+  "Amazon.it": "ok (29)",
   "MediaWorld": "ok (12)",
-  "Trovaprezzi": "ok (6)"
+  "Trovaprezzi": "errore: [Errno 32] Broken pipe"
  },
  "offers": [
   {
    "rank": 1,
+   "model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 7 7730U,WIN-11 Pro,32GB DDR4,512GB SSD",
+   "shop": "Amazon.it",
+   "price": 499.99,
+   "url": "https://www.amazon.it/dp/B0DYNGJHMM"
+  },
+  {
+   "rank": 2,
    "model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 5 7430U,WIN-11 Pro,32GB DDR4,1TB SSD",
    "shop": "Amazon.it",
    "price": 599.0,
    "url": "https://www.amazon.it/dp/B0HBBN7YVF"
-  },
-  {
-   "rank": 2,
-   "model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 5 7430U,WIN-11 Pro,32GB DDR4,1TB SSD | (Superare 5300U,fino a 4,3 GHz),Mini Computer per Ufficio/Casa/Scuola,4K Triple Display DP+HDMI+Type-C,WiFi 6/BT5.2/Dual LAN — Amazon.it Marketplace",
-   "shop": "Trovaprezzi",
-   "price": 599.0,
-   "url": "https://www.trovaprezzi.it/goto/956478119?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxVXhyNUlxMjhTcFhGZzI1MUVpY0JzSStOckdCVllobHhRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=4&nb_results=6&pc=6&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 3,
-   "model": "NiPoGi AM06PRO Mini PC Ryzen 7 7730U W 11 Pro (8C/16T fino a 4,5 GHz) 32GB DDR4 — eBay",
-   "shop": "Trovaprezzi",
-   "price": 683.66,
-   "url": "https://www.trovaprezzi.it/goto/958563421?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxVXhyNUlxMjhTcFhGZzI1MUVpY0JzSStOckdCVllobHhRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=5&nb_results=6&pc=6&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 4,
-   "model": "NiPoGi AM06PRO Mini PC АMD Ryzen 7 7730U W 11 Pro 32GB(2x16GB) DDR4,1TB SSD — eBay",
-   "shop": "Trovaprezzi",
-   "price": 915.47,
-   "url": "https://www.trovaprezzi.it/goto/971781912?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxVXhyNUlxMjhTcFhGZzI1MUVpY0JzSStOckdCVllobHhRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=6&nb_results=6&pc=6&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   }
  ]
 }
