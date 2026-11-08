@@ -83,5 +83,18 @@
    "Amazon.it": 499.99
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-08",
+  "min_price": 499.99,
+  "avg_top10": 648.72,
+  "offers": 6,
+  "cheapest_model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 7 7730U,WIN-11 Pro,32GB DDR4,512GB SSD | (Superare 7430U,fino a 4,5 GHz),Mini Computer per Ufficio/Casa/Scuola,4K Triple Display DP+HDMI+Type-C,WiFi 6/BT5.2/Dual LAN — Amazon.it Marketplace",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 499.99,
+   "Amazon.it": 599.0
+  },
+  "source": "negozi"
  }
 ]

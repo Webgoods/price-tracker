@@ -83,5 +83,17 @@
    "Amazon.it": 1099.0
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-08",
+  "min_price": 1099.0,
+  "avg_top10": 1221.32,
+  "offers": 2,
+  "cheapest_model": "GEEKOM A8 Max Mini PC con AMD Ryzen 9 8945HS|32GB DDR5 e 1TB SSD | Sistema già pronto per l'uso| Doppia LAN 2.5G, USB4.0, Supporto 4K/8K - Per Creatori Professionali e Applicazioni Aziendali — Amazon.it Marketplace",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 1099.0
+  },
+  "source": "negozi"
  }
 ]

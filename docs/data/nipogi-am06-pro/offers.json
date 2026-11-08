@@ -1,24 +1,52 @@
 {
- "updated": "2026-11-06T18:46:14+00:00",
+ "updated": "2026-11-08T11:18:40+00:00",
  "sources": {
-  "Amazon.it": "ok (29)",
+  "Amazon.it": "ok (25)",
   "MediaWorld": "ok (12)",
-  "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+  "Trovaprezzi": "ok (8)"
  },
  "offers": [
   {
    "rank": 1,
-   "model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 7 7730U,WIN-11 Pro,32GB DDR4,512GB SSD",
-   "shop": "Amazon.it",
+   "model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 7 7730U,WIN-11 Pro,32GB DDR4,512GB SSD | (Superare 7430U,fino a 4,5 GHz),Mini Computer per Ufficio/Casa/Scuola,4K Triple Display DP+HDMI+Type-C,WiFi 6/BT5.2/Dual LAN — Amazon.it Marketplace",
+   "shop": "Trovaprezzi",
    "price": 499.99,
-   "url": "https://www.amazon.it/dp/B0DYNGJHMM"
+   "url": "https://www.trovaprezzi.it/goto/988749126?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWVBZcTlmcktTTDFrSThVa1Z2S0o3Q01QeXBnNlExK3VRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=3&nb_results=8&pc=8&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 2,
+   "model": "NiPoGi AM06PRO Mini PC АMD Ryzen 7 7730U WIN 11 Pro 32GB DDR4,512GB SSD — eBay",
+   "shop": "Trovaprezzi",
+   "price": 595.18,
+   "url": "https://www.trovaprezzi.it/goto/966012822?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWVBZcTlmcktTTDFrSThVa1Z2S0o3Q01QeXBnNlExK3VRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=5&nb_results=8&pc=8&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 3,
    "model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 5 7430U,WIN-11 Pro,32GB DDR4,1TB SSD",
    "shop": "Amazon.it",
    "price": 599.0,
    "url": "https://www.amazon.it/dp/B0HBBN7YVF"
+  },
+  {
+   "rank": 4,
+   "model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 5 7430U,WIN-11 Pro,32GB DDR4,1TB SSD | (Superare 5300U,fino a 4,3 GHz),Mini Computer per Ufficio/Casa/Scuola,4K Triple Display DP+HDMI+Type-C,WiFi 6/BT5.2/Dual LAN — Amazon.it Marketplace",
+   "shop": "Trovaprezzi",
+   "price": 599.0,
+   "url": "https://www.trovaprezzi.it/goto/956478119?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWVBZcTlmcktTTDFrSThVa1Z2S0o3Q01QeXBnNlExK3VRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=6&nb_results=8&pc=8&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 5,
+   "model": "NiPoGi AM06PRO Mini PC Ryzen 7 7730U W 11 Pro (8C/16T fino a 4,5 GHz) 32GB DDR4 — eBay",
+   "shop": "Trovaprezzi",
+   "price": 683.66,
+   "url": "https://www.trovaprezzi.it/goto/958563421?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWVBZcTlmcktTTDFrSThVa1Z2S0o3Q01QeXBnNlExK3VRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=7&nb_results=8&pc=8&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 6,
+   "model": "NiPoGi AM06PRO Mini PC АMD Ryzen 7 7730U W 11 Pro 32GB(2x16GB) DDR4,1TB SSD — eBay",
+   "shop": "Trovaprezzi",
+   "price": 915.47,
+   "url": "https://www.trovaprezzi.it/goto/971781912?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWVBZcTlmcktTTDFrSThVa1Z2S0o3Q01QeXBnNlExK3VRPT01&search=bmlwb2dpIGFtMDYgcHJvCTE1&pos=8&nb_results=8&pc=8&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   }
  ]
 }
