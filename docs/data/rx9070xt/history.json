@@ -228,5 +228,19 @@
    "MediaWorld": 1036.8
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-10",
+  "min_price": 932.41,
+  "avg_top10": 976.39,
+  "offers": 46,
+  "cheapest_model": "ASUS PRIME RX9070XT OC, Scheda Grafica 16 GB GDDR6 AMD Radeon, Nera",
+  "cheapest_shop": "Amazon.it",
+  "by_shop": {
+   "Amazon.it": 932.41,
+   "Trovaprezzi": 932.41,
+   "MediaWorld": 1036.8
+  },
+  "source": "negozi"
  }
 ]
