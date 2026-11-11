@@ -121,5 +121,17 @@
    "Trovaprezzi": 1099.0
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-11",
+  "min_price": 1343.64,
+  "avg_top10": 1343.64,
+  "offers": 1,
+  "cheapest_model": "GEEKOM A8 Max Mini PC con AMD Ryzen 9 8945HS 32GB DDR5 e 1TB SSD Sistema già — eBay",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 1343.64
+  },
+  "source": "negozi"
  }
 ]

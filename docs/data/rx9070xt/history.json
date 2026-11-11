@@ -242,5 +242,18 @@
    "MediaWorld": 1036.8
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-11",
+  "min_price": 816.19,
+  "avg_top10": 961.2,
+  "offers": 31,
+  "cheapest_model": "ASRock Steel Legend Radeon RX 9070 XT Dark 16GB — Amazon.it Marketplace",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 816.19,
+   "MediaWorld": 1038.0
+  },
+  "source": "negozi"
  }
 ]

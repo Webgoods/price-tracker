@@ -1,31 +1,17 @@
 {
- "updated": "2026-11-10T10:59:01+00:00",
+ "updated": "2026-11-11T11:27:22+00:00",
  "sources": {
-  "Amazon.it": "ok (29)",
+  "Amazon.it": "ok (0)",
   "MediaWorld": "ok (12)",
-  "Trovaprezzi": "ok (4)"
+  "Trovaprezzi": "ok (3)"
  },
  "offers": [
   {
    "rank": 1,
-   "model": "GEEKOM A8 Max Mini PC con AMD Ryzen 9 8945HS|32GB DDR5 e 1TB SSD",
-   "shop": "Amazon.it",
-   "price": 1099.0,
-   "url": "https://www.amazon.it/dp/B0G19ZFR3Q"
-  },
-  {
-   "rank": 2,
-   "model": "GEEKOM A8 Max Mini PC con AMD Ryzen 9 8945HS|32GB DDR5 e 1TB SSD | Sistema già pronto per l'uso| Doppia LAN 2.5G, USB4.0, Supporto 4K/8K - Per Creatori Professionali e Applicazioni Aziendali — Amazon.it Marketplace",
-   "shop": "Trovaprezzi",
-   "price": 1099.0,
-   "url": "https://www.trovaprezzi.it/goto/915514487?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxUU93bDJPajJoZ1pSMWUvNUwzUlU4QitzMERHQnEvNnVnPT01&search=Z2Vla29tIGE4IG1heAkx0&pos=3&nb_results=4&pc=4&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 3,
    "model": "GEEKOM A8 Max Mini PC con AMD Ryzen 9 8945HS 32GB DDR5 e 1TB SSD Sistema già — eBay",
    "shop": "Trovaprezzi",
    "price": 1343.64,
-   "url": "https://www.trovaprezzi.it/goto/975638549?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxUU93bDJPajJoZ1pSMWUvNUwzUlU4QitzMERHQnEvNnVnPT01&search=Z2Vla29tIGE4IG1heAkx0&pos=4&nb_results=4&pc=4&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "url": "https://www.trovaprezzi.it/goto/975638549?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxZHAzL2RJa3ZHSEhIN0N1UktsSlc4ekhZNEhlczQ0RzNnPT01&search=Z2Vla29tIGE4IG1heAkx0&pos=3&nb_results=3&pc=3&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   }
  ]
 }
