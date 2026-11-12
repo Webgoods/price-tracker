@@ -97,5 +97,17 @@
    "Trovaprezzi": 909.96
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-12",
+  "min_price": 909.96,
+  "avg_top10": 1201.1,
+  "offers": 5,
+  "cheapest_model": "GMKtec Mini PC Ryzen 7 8845HS (8C/16T, fino a 5.1Ghz) K8 Plus 32 GB DDR5 1TB SSD Mini Computer con Quadruplo display 4K|Tipo-C|WiFi 6|BT 5.2 |Oculink|Doppia scheda di rete 2,5G|HDMI 2.1|USB4 — Amazon.it Marketplace",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 909.96
+  },
+  "source": "negozi"
  }
 ]
