@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-13T11:21:40+00:00",
+ "updated": "2026-11-16T18:11:45+00:00",
  "sources": {
   "Amazon.it": "ok (30)",
   "MediaWorld": "ok (12)",
-  "Trovaprezzi": "ok (2)"
+  "Trovaprezzi": "errore: [Errno 32] Broken pipe"
  },
  "offers": [
   {
@@ -17,7 +17,7 @@
    "rank": 2,
    "model": "GMKtec Mini PC M7 Ultra, Ryzen 7 Pro 6850U, 32G RAM 1T SSD",
    "shop": "Amazon.it",
-   "price": 845.07,
+   "price": 845.04,
    "url": "https://www.amazon.it/dp/B0DDSK66TK"
   }
  ]
