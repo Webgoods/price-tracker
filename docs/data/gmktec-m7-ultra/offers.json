@@ -1,9 +1,9 @@
 {
- "updated": "2026-11-16T18:11:45+00:00",
+ "updated": "2026-11-17T11:27:01+00:00",
  "sources": {
   "Amazon.it": "ok (30)",
   "MediaWorld": "ok (12)",
-  "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+  "Trovaprezzi": "ok (2)"
  },
  "offers": [
   {

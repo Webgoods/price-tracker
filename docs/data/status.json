@@ -1,36 +1,36 @@
 {
- "date": "2026-11-16",
- "updated": "2026-11-16T18:11:45+00:00",
+ "date": "2026-11-17",
+ "updated": "2026-11-17T11:27:01+00:00",
  "products": {
   "rx9070xt": {
    "sources": {
     "Amazon.it": "ok (30)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: WebSocket chiuso"
+    "Trovaprezzi": "ok (20)"
    },
-   "offers": 26
+   "offers": 43
   },
   "gmktec-k8-plus": {
    "sources": {
-    "Amazon.it": "ok (19)",
+    "Amazon.it": "ok (20)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (7)"
    },
-   "offers": 3
+   "offers": 8
   },
   "beelink-ser8": {
    "sources": {
     "Amazon.it": "ok (30)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (4)"
    },
-   "offers": 9
+   "offers": 13
   },
   "geekom-a8-max": {
    "sources": {
-    "Amazon.it": "ok (30)",
+    "Amazon.it": "ok (0)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (1)"
    },
    "offers": 1
   },
@@ -38,17 +38,17 @@
    "sources": {
     "Amazon.it": "ok (30)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (2)"
    },
    "offers": 2
   },
   "nipogi-am06-pro": {
    "sources": {
-    "Amazon.it": "ok (18)",
+    "Amazon.it": "ok (24)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (8)"
    },
-   "offers": 1
+   "offers": 5
   }
  },
  "notified": {}

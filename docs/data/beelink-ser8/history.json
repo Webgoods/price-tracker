@@ -196,5 +196,19 @@
    "MediaWorld": 1378.99
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-17",
+  "min_price": 969.0,
+  "avg_top10": 1109.0,
+  "offers": 13,
+  "cheapest_model": "Beelink SER8 Mini PC AMD Ryzen 7 8845HS, 32GB DDR5 1TB SSD, Scheda Grafica Radeon 780M, Mini Computer Triplo Display 4K, Wi-Fi 6, Ethernet 2.5G, USB4, Windows 11 Pro — Amazon.it Marketplace",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 969.0,
+   "Amazon.it": 1069.0,
+   "MediaWorld": 1378.99
+  },
+  "source": "negozi"
  }
 ]
