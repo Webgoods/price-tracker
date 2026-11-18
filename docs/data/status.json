@@ -1,54 +1,54 @@
 {
- "date": "2026-11-17",
- "updated": "2026-11-17T11:27:01+00:00",
+ "date": "2026-11-18",
+ "updated": "2026-11-18T11:19:59+00:00",
  "products": {
   "rx9070xt": {
    "sources": {
-    "Amazon.it": "ok (30)",
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
     "MediaWorld": "ok (12)",
     "Trovaprezzi": "ok (20)"
    },
-   "offers": 43
+   "offers": 28
   },
   "gmktec-k8-plus": {
    "sources": {
-    "Amazon.it": "ok (20)",
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
     "MediaWorld": "ok (12)",
     "Trovaprezzi": "ok (7)"
    },
-   "offers": 8
+   "offers": 5
   },
   "beelink-ser8": {
    "sources": {
-    "Amazon.it": "ok (30)",
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
     "MediaWorld": "ok (12)",
     "Trovaprezzi": "ok (4)"
    },
-   "offers": 13
+   "offers": 5
   },
   "geekom-a8-max": {
    "sources": {
-    "Amazon.it": "ok (0)",
-    "MediaWorld": "ok (12)",
-    "Trovaprezzi": "ok (1)"
-   },
-   "offers": 1
-  },
-  "gmktec-m7-ultra": {
-   "sources": {
-    "Amazon.it": "ok (30)",
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
     "MediaWorld": "ok (12)",
     "Trovaprezzi": "ok (2)"
    },
    "offers": 2
   },
+  "gmktec-m7-ultra": {
+   "sources": {
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
+    "MediaWorld": "ok (12)",
+    "Trovaprezzi": "ok (2)"
+   },
+   "offers": 0
+  },
   "nipogi-am06-pro": {
    "sources": {
-    "Amazon.it": "ok (24)",
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
     "MediaWorld": "ok (12)",
     "Trovaprezzi": "ok (8)"
    },
-   "offers": 5
+   "offers": 4
   }
  },
  "notified": {}
