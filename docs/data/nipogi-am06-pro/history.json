@@ -223,5 +223,18 @@
    "Trovaprezzi": 683.66
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-20",
+  "min_price": 569.05,
+  "avg_top10": 863.93,
+  "offers": 4,
+  "cheapest_model": "NiPoGi AM06PRO Mini PC,АMD Ryzen 5 7430U,WIN-11 Pro,32GB DDR4,1TB SSD",
+  "cheapest_shop": "Amazon.it",
+  "by_shop": {
+   "Amazon.it": 569.05,
+   "Trovaprezzi": 683.66
+  },
+  "source": "negozi"
  }
 ]
