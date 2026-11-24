@@ -1,7 +1,7 @@
 {
- "updated": "2026-11-22T18:57:52+00:00",
+ "updated": "2026-11-24T11:21:31+00:00",
  "sources": {
-  "Amazon.it": "ok (29)",
+  "Amazon.it": "ok (30)",
   "MediaWorld": "ok (12)",
   "Trovaprezzi": "ok (20)"
  },
@@ -11,217 +11,245 @@
    "model": "Asrock VGA ASROCK RX 9070 XT 16GB CHALLENGER — Market2go",
    "shop": "Trovaprezzi",
    "price": 971.39,
-   "url": "https://www.trovaprezzi.it/goto/911930841?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9DbFhGektFZ2F1azR0ek1waTJuM1lnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=1&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "url": "https://www.trovaprezzi.it/goto/911930841?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2l1eFFqWTBORjBzVlhJR0lQUm91WUJnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=1&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 2,
+   "model": "ASUS PRIME RX9070XT OC, Scheda Grafica 16 GB GDDR6 AMD Radeon, Bianca",
+   "shop": "Amazon.it",
+   "price": 994.55,
+   "url": "https://www.amazon.it/dp/B09BMQNNR1"
+  },
+  {
+   "rank": 3,
    "model": "XFX RX 9070XT Swift Gaming 16GB GDDR6 Black",
    "shop": "Amazon.it",
    "price": 999.0,
    "url": "https://www.amazon.it/dp/B0DXLG4FJ3"
   },
   {
-   "rank": 3,
+   "rank": 4,
    "model": "Gigabyte Radeon RX 9070 XT GAMING OC ICE 16G Scheda Grafica - 16GB GDDR6, 256bit, PCI-E 5.0, 3060 MHz Frequenza core, 2 x DisplayPort, 2 x HDMI, GV-R907XGAMINGOCICE-16GD",
    "shop": "Amazon.it",
    "price": 999.99,
    "url": "https://www.amazon.it/dp/B0G14L8BLN"
   },
   {
-   "rank": 4,
-   "model": "ASUS PRIME RX9070XT OC, Scheda Grafica 16 GB GDDR6 AMD Radeon, Nera",
-   "shop": "Amazon.it",
-   "price": 1007.39,
-   "url": "https://www.amazon.it/dp/B0DSG52H7D"
-  },
-  {
    "rank": 5,
    "model": "ASUS PRIME RX9070XT OC, Scheda Grafica 16 GB GDDR6 AMD Radeon, Nera | 256 Bit, PCIe 5.0, 1 HDMI 2.1, 3 DisplayPort 2.1, Software GPU Tweak III, PRIME-RX9070XT-O16G — Amazon.it",
    "shop": "Trovaprezzi",
    "price": 1007.39,
-   "url": "https://www.trovaprezzi.it/goto/960213246?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9DbFhGektFZ2F1azR0ek1waTJuM1lnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=3&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "url": "https://www.trovaprezzi.it/goto/960213246?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=3&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 6,
    "model": "XFX RX 9070XT Swift Gaming 16GB GDDR6 Black — Amazon.it Marketplace",
    "shop": "Trovaprezzi",
    "price": 1008.99,
-   "url": "https://www.trovaprezzi.it/goto/913386017?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9DbFhGektFZ2F1azR0ek1waTJuM1lnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=2&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "url": "https://www.trovaprezzi.it/goto/913386017?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=2&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 7,
-   "model": "Asrock VGA RX9070XT SL 16G,AMD,RX9070XT,16GB,GDDR6,256BIT,2HDMI+2DP (3 ventole) — Amazon.it Marketplace",
-   "shop": "Trovaprezzi",
-   "price": 1016.6,
-   "url": "https://www.trovaprezzi.it/goto/968675898?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9DbFhGektFZ2F1azR0ek1waTJuM1lnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=4&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 8,
    "model": "Gigabyte Radeon RX 9070 XT GAMING OC 16G Scheda Grafica - 16 GB GDDR6, 256 bit, PCI-E 5.0, 3060 MHz Frequenza Base, 2 x DisplayPort, 2 x HDMI, GV-R9070XTGAMING OC-16GD",
    "shop": "Amazon.it",
-   "price": 1017.0,
+   "price": 1015.0,
    "url": "https://www.amazon.it/dp/B0DT7B79K9"
   },
   {
+   "rank": 8,
+   "model": "PowerColor Red Hellhound Spectral White AMD Radeon™ RX 9070 XT 16GB GDDR6 — Pixmart",
+   "shop": "Trovaprezzi",
+   "price": 1021.81,
+   "url": "https://www.trovaprezzi.it/goto/988257594?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=4&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
    "rank": 9,
-   "model": "Sapphire NITRO+ AMD RADEON™ RX 9070 XT GAMING OC 16GB DUAL HDMI/DUAL DP",
-   "shop": "Amazon.it",
-   "price": 1029.99,
-   "url": "https://www.amazon.it/dp/B0DRPPXB5X"
+   "model": "XFX VGA 16GB RADEON RX9070XT SWIFT OC Gaming 3xDP/1xHDMI SWIFT AMD Radeon RX 9070XT OC Gaming Edition - Grafikkarte - RX-97TSWF3B9 — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1022.08,
+   "url": "https://www.trovaprezzi.it/goto/840862683?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=5&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 10,
-   "model": "Sapphire NITRO+ AMD RADEON™ RX 9070 XT GAMING OC 16GB DUAL HDMI/DUAL DP — Amazon.it",
+   "model": "XFX VGA 16GB RADEON RX9070XT SWIFT WHITE OC Gaming 3xDP/1xHDMI SWIFT AMD Radeon RX 9070XT WHITE OC Gaming Edition - Grafikkarte - RX-97TSWF3W9 — GigaTrade",
    "shop": "Trovaprezzi",
-   "price": 1029.99,
-   "url": "https://www.trovaprezzi.it/goto/961311932?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9DbFhGektFZ2F1azR0ek1waTJuM1lnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=5&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "price": 1022.08,
+   "url": "https://www.trovaprezzi.it/goto/840864836?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=6&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 11,
+   "model": "ASUS Prime -RX9070XT-O16G AMD Radeon RX 9070 XT 16 GB GDDR6 - 90YV0L71-M0NA00 — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1025.61,
+   "url": "https://www.trovaprezzi.it/goto/840863318?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=7&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 12,
+   "model": "Sapphire Pulse Radeon RX 9070 XT Amd 16 GB GDDR6 - Grafikkarte - 16.384 MB - 11348-03-20G — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1027.89,
+   "url": "https://www.trovaprezzi.it/goto/840861044?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=8&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 13,
    "model": "XFX Mercury AMD Radeon RX 9070 XT OC Gaming Edition 16 GB GDDR6, SCHEDA GRAFICA, 16 GB",
    "shop": "MediaWorld",
    "price": 1032.0,
    "url": "https://www.mediaworld.it/it/product/_xfx-mercury-amd-radeon-rx-9070-xt-oc-gaming-edition-16-gb-gddr6-scheda-grafica-16-gb-160687818.html"
   },
   {
-   "rank": 12,
+   "rank": 14,
    "model": "ASRock Steel Legend Radeon RX 9070 XT Dark 16GB — Amazon.it Marketplace",
    "shop": "Trovaprezzi",
    "price": 1036.33,
-   "url": "https://www.trovaprezzi.it/goto/922381362?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9DbFhGektFZ2F1azR0ek1waTJuM1lnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=7&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "url": "https://www.trovaprezzi.it/goto/922381362?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=13&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
-   "rank": 13,
+   "rank": 15,
+   "model": "XFX VGA 16GB Radeon RX9070XT Mercury OC Gaming 3xDP/1xHDMI AMD Radeon RX 9070XT - Grafikkarte - 16.384 MB - RX-97TRGBBB9 — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1037.11,
+   "url": "https://www.trovaprezzi.it/goto/840863544?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=9&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 16,
+   "model": "XFX VGA 16GB RADEON RX9070XT Quicksilver WHITE OC Gaming 3xDP/1xHDMI AMD - Grafikkarte - RX-97TQICKW9 — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1040.31,
+   "url": "https://www.trovaprezzi.it/goto/840862250?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=10&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 17,
+   "model": "Powercolor Scheda Video Amd PowerColor Hellhound Radeon RX 9070 XT 16G-L/OC [RX9070XT 16G-L/OC] — Bpm power",
+   "shop": "Trovaprezzi",
+   "price": 1043.52,
+   "url": "https://www.trovaprezzi.it/goto/869011002?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=11&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 18,
+   "model": "Sapphire Pure Radeon RX 9070 XT AMD 16 GB GDDR6 - Grafikkarte - 16.384 MB - 11348-02-20G — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1045.64,
+   "url": "https://www.trovaprezzi.it/goto/840862675?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=12&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 19,
+   "model": "Powercolor Scheda Video Amd PowerColor Reaper RX9070XT 16G-A [RX9070XT 16G-A] — Bpm power",
+   "shop": "Trovaprezzi",
+   "price": 1049.51,
+   "url": "https://www.trovaprezzi.it/goto/807159676?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=14&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 20,
+   "model": "Xfx Scheda Video Xfx Radeon RX 9070 XT 16GB Quicksilver OC Bianco [RX-97TQICKW9] — Bpm power",
+   "shop": "Trovaprezzi",
+   "price": 1053.23,
+   "url": "https://www.trovaprezzi.it/goto/785930882?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=15&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 21,
+   "model": "GIGABYTE Radeon RX 9070 XT GAMING OC ICE 16G AMD 16 GB GDDR6 - GV-R907XGAMINGOCICE-16GD — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1053.33,
+   "url": "https://www.trovaprezzi.it/goto/849593305?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=16&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 22,
+   "model": "Sapphire Nitro+ AMD Radeon RX 9070 XT OC 16 GB - Grafikkarte - 16.384 MB - 11348-01-20G — GigaTrade",
+   "shop": "Trovaprezzi",
+   "price": 1053.33,
+   "url": "https://www.trovaprezzi.it/goto/840864732?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=17&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 23,
+   "model": "XFX - Mercury Radeon RX 9070 XT OC Gaming Edition AMD 16 GB GDDR6 - SPEDIZIONE GRATUITA — Eprice",
+   "shop": "Trovaprezzi",
+   "price": 1056.97,
+   "url": "https://www.trovaprezzi.it/goto/993967338?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=20&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+  },
+  {
+   "rank": 24,
    "model": "XFX Quicksilver AMD Radeon RX 9070 XT Triple Fan 16GB GDDR6 FSR 4",
    "shop": "Amazon.it",
    "price": 1059.0,
    "url": "https://www.amazon.it/dp/B0DXVPZDL5"
   },
   {
-   "rank": 14,
-   "model": "SAPPHIRE PULSE AMD RADEON RX 9070 XT GAMING 16GB — A&D Gaming",
-   "shop": "Trovaprezzi",
-   "price": 1059.99,
-   "url": "https://www.trovaprezzi.it/goto/965546472?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=12&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 15,
-   "model": "ASUS PRIME AMD Radeon RX 9070 XT OC Edition — Pixmart",
-   "shop": "Trovaprezzi",
-   "price": 1064.69,
-   "url": "https://www.trovaprezzi.it/goto/988257532?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9DbFhGektFZ2F1azR0ek1waTJuM1lnPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=8&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 16,
-   "model": "XFX Scheda Video XFX AMD Radeon RX 9070XT SWIFT Gaming 16 GB GDDR6 Bianco — Redgaming",
-   "shop": "Trovaprezzi",
-   "price": 1065.8,
-   "url": "https://www.trovaprezzi.it/goto/845993596?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=9&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 17,
-   "model": "ASROCK Scheda Video ASRock AMD Radeon RX 9070 XT Challenger 16GB Nero — Redgaming",
-   "shop": "Trovaprezzi",
-   "price": 1068.3,
-   "url": "https://www.trovaprezzi.it/goto/881530054?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=11&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 18,
-   "model": "XFX Quicksilver AMD Radeon RX 9070 XT Triple Fan 16GB GDDR6 FSR 4 — Amazon.it Marketplace",
-   "shop": "Trovaprezzi",
-   "price": 1068.99,
-   "url": "https://www.trovaprezzi.it/goto/916133951?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=10&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 19,
-   "model": "PowerColor Red Hellhound Spectral White AMD Radeon™ RX 9070 XT 16GB GDDR6 — Pixmart",
-   "shop": "Trovaprezzi",
-   "price": 1076.28,
-   "url": "https://www.trovaprezzi.it/goto/988257594?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=13&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 20,
-   "model": "ASUS Scheda Video AMD Asus Prime RX 9070XT Fight Edition 16GB OC GDDR6 Nero — Redgaming",
-   "shop": "Trovaprezzi",
-   "price": 1079.0,
-   "url": "https://www.trovaprezzi.it/goto/845993370?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=14&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 21,
-   "model": "XFX Scheda Video AMD XFX Radeon RX 9070XT SWIFT Gaming 16GB Nero — Redgaming",
-   "shop": "Trovaprezzi",
-   "price": 1079.0,
-   "url": "https://www.trovaprezzi.it/goto/845994196?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=15&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 22,
-   "model": "SAPPHIRE Scheda Video Sapphire PULSE Radeon RX 9070 XT AMD 16 GB GDDR6 Nero — Redgaming",
-   "shop": "Trovaprezzi",
-   "price": 1079.0,
-   "url": "https://www.trovaprezzi.it/goto/846048478?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=16&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 23,
-   "model": "POWERCOLOR Scheda Video AMD PowerColor Radeon Hellhound RX 9070 XT 16GB GDDR6 — Redgaming",
-   "shop": "Trovaprezzi",
-   "price": 1079.0,
-   "url": "https://www.trovaprezzi.it/goto/845993383?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=17&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
-   "rank": 24,
-   "model": "XFX Scheda Video XFX AMD Radeon RX 9070XT MERCURY Gaming RGB 16GB OC GDDR6 Bianco — Redgaming",
-   "shop": "Trovaprezzi",
-   "price": 1082.5,
-   "url": "https://www.trovaprezzi.it/goto/877519327?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=18&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
-  },
-  {
    "rank": 25,
-   "model": "XFX Scheda Video AMD XFX Radeon RX 9070XT QUICKSILVER Gaming 16GB Bianco — Redgaming",
+   "model": "ASUS Prime -RX9070XT-O16G-WHITE AMD Radeon RX 9070 XT 16 GB GDDR6 - 90YV0L75-M0NA00 — GigaTrade",
    "shop": "Trovaprezzi",
-   "price": 1082.5,
-   "url": "https://www.trovaprezzi.it/goto/845994194?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=19&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "price": 1062.4,
+   "url": "https://www.trovaprezzi.it/goto/840864891?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=18&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 26,
-   "model": "XFX Scheda Video AMD XFX Radeon RX 9070XT MERCURY Gaming RGB 16GB OC — Redgaming",
+   "model": "ASUS PRIME AMD Radeon RX 9070 XT OC Edition — Pixmart",
    "shop": "Trovaprezzi",
-   "price": 1085.5,
-   "url": "https://www.trovaprezzi.it/goto/845994193?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxU3U2dlMwclBNTC9iTTNySk85MnQ1NlQvdEQ3WGg5aWdRPT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=20&nb_results=91&pc=91&sc=0&tc=0&offer_ss=pc&tr=prezzo"
+   "price": 1064.69,
+   "url": "https://www.trovaprezzi.it/goto/988257532?impression=Vzl6eFN4eHZRNFR6eHNPUVlyQmdxWmhTRXF2Y1FlQ2lLNTl3a0tBaVhQaWdJWkMvWW5ZVzZ3PT01&search=YW1kIHJ4IDkwNzAgeHQJMjg1&pos=19&nb_results=129&pc=129&sc=0&tc=0&offer_ss=pc&tr=prezzo"
   },
   {
    "rank": 27,
+   "model": "ASUS PRIME RX9070XT OC, Scheda Grafica 16 GB GDDR6 AMD Radeon, Nera",
+   "shop": "Amazon.it",
+   "price": 1075.3,
+   "url": "https://www.amazon.it/dp/B0DSG52H7D"
+  },
+  {
+   "rank": 28,
    "model": "Xfx Rx 9070xt Mercury Magnetic Air Rgb Gaming 16gb Oc Black Retail - 16.384 Mb (rX-97tmargb9)",
    "shop": "Amazon.it",
    "price": 1099.0,
    "url": "https://www.amazon.it/dp/B0DXVYQN67"
   },
   {
-   "rank": 28,
+   "rank": 29,
    "model": "XFX Mercury AMD Radeon RX 9070XT OC White Magnetic Air Edition con RGB 16 GB GDDR6 HDMI 3xDP, AMD RDNA™ 4 (RX-97TMARGW9)",
    "shop": "Amazon.it",
    "price": 1099.0,
    "url": "https://www.amazon.it/dp/B0DWP6PY32"
   },
   {
-   "rank": 29,
+   "rank": 30,
+   "model": "POWERCOLOR Hellhound Radeon RX 9070 XT 16GB GDDR6, SCHEDA GRAFICA, 16 GB",
+   "shop": "MediaWorld",
+   "price": 1121.17,
+   "url": "https://www.mediaworld.it/it/product/_powercolor-hellhound-radeon-rx-9070-xt-16gb-gddr6-scheda-grafica-16-gb-188283775.html"
+  },
+  {
+   "rank": 31,
    "model": "Sapphire Pure Radeon RX 9070 XT - Grafikkarte",
    "shop": "Amazon.it",
    "price": 1140.52,
    "url": "https://www.amazon.it/dp/B0DRPRKYR6"
   },
   {
-   "rank": 30,
+   "rank": 32,
+   "model": "Gigabyte AORUS Radeon RX 9070 XT ELITE 16G Scheda Grafica - 16 GB GDDR6, 256 bit, PCI-E 5.0, 3100 MHz Frequenza Base, 2 x DisplayPort, 2 x HDMI, GV-R9070XTAORUS E-16GD",
+   "shop": "Amazon.it",
+   "price": 1159.35,
+   "url": "https://www.amazon.it/dp/B0DT7C5ZC7"
+  },
+  {
+   "rank": 33,
    "model": "Sapphire Pulse Radeon RX 9070 XT - Grafikkarte",
    "shop": "Amazon.it",
-   "price": 1147.0,
+   "price": 1166.62,
    "url": "https://www.amazon.it/dp/B0DRPRZMK2"
   },
   {
-   "rank": 31,
-   "model": "Gigabyte AORUS Radeon RX 9070 XT ELITE 16G Scheda Grafica - 16 GB GDDR6, 256 bit, PCI-E 5.0, 3100 MHz Frequenza Base, 2 x DisplayPort, 2 x HDMI, GV-R9070XTAORUS E-16GD",
+   "rank": 34,
+   "model": "Sapphire NITRO+ AMD RADEON™ RX 9070 XT GAMING OC 16GB DUAL HDMI/DUAL DP",
    "shop": "Amazon.it",
-   "price": 1158.99,
-   "url": "https://www.amazon.it/dp/B0DT7C5ZC7"
+   "price": 1244.62,
+   "url": "https://www.amazon.it/dp/B0DRPPXB5X"
+  },
+  {
+   "rank": 35,
+   "model": "SAPPHIRE Radeon RX 9070 XT 16GB GDDR6, SCHEDA GRAFICA, 16 GB",
+   "shop": "MediaWorld",
+   "price": 1370.25,
+   "url": "https://www.mediaworld.it/it/product/_sapphire-radeon-rx-9070-xt-16gb-gddr6-scheda-grafica-16-gb-188187646.html"
   }
  ]
 }

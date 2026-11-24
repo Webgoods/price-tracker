@@ -249,5 +249,18 @@
    "Amazon.it": 749.99
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-24",
+  "min_price": 683.66,
+  "avg_top10": 901.74,
+  "offers": 5,
+  "cheapest_model": "NiPoGi AM06PRO Mini PC Ryzen 7 7730U W 11 Pro (8C/16T fino a 4,5 GHz) 32GB DDR4 — eBay",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 683.66,
+   "Amazon.it": 749.99
+  },
+  "source": "negozi"
  }
 ]
