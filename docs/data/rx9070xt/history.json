@@ -391,5 +391,19 @@
    "MediaWorld": 1032.0
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-25",
+  "min_price": 929.99,
+  "avg_top10": 999.32,
+  "offers": 34,
+  "cheapest_model": "XFX Swift AMD Radeon RX 9070XT White Triple Fan Gaming Edition con 16 GB GDDR6",
+  "cheapest_shop": "Amazon.it",
+  "by_shop": {
+   "Amazon.it": 929.99,
+   "Trovaprezzi": 948.64,
+   "MediaWorld": 1129.57
+  },
+  "source": "negozi"
  }
 ]
