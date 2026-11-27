@@ -1,54 +1,54 @@
 {
- "date": "2026-11-26",
- "updated": "2026-11-26T11:20:30+00:00",
+ "date": "2026-11-27",
+ "updated": "2026-11-27T11:26:53+00:00",
  "products": {
   "rx9070xt": {
    "sources": {
-    "Amazon.it": "ok (29)",
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: WebSocket chiuso"
+    "Trovaprezzi": "ok (20)"
    },
-   "offers": 13
+   "offers": 27
   },
   "gmktec-k8-plus": {
    "sources": {
-    "Amazon.it": "ok (27)",
+    "Amazon.it": "ok (0)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (6)"
    },
-   "offers": 3
+   "offers": 5
   },
   "beelink-ser8": {
    "sources": {
-    "Amazon.it": "ok (29)",
+    "Amazon.it": "ok (0)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (3)"
    },
-   "offers": 8
+   "offers": 4
   },
   "geekom-a8-max": {
    "sources": {
-    "Amazon.it": "ok (30)",
+    "Amazon.it": "ok (0)",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
-   },
-   "offers": 1
-  },
-  "gmktec-m7-ultra": {
-   "sources": {
-    "Amazon.it": "ok (30)",
-    "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (2)"
    },
    "offers": 2
   },
+  "gmktec-m7-ultra": {
+   "sources": {
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
+    "MediaWorld": "ok (12)",
+    "Trovaprezzi": "ok (2)"
+   },
+   "offers": 0
+  },
   "nipogi-am06-pro": {
    "sources": {
-    "Amazon.it": "ok (29)",
+    "Amazon.it": "errore: HTTP Error 503: Service Unavailable",
     "MediaWorld": "ok (12)",
-    "Trovaprezzi": "errore: [Errno 32] Broken pipe"
+    "Trovaprezzi": "ok (6)"
    },
-   "offers": 1
+   "offers": 4
   }
  },
  "notified": {}

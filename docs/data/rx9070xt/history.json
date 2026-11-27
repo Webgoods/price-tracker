@@ -418,5 +418,18 @@
    "MediaWorld": 1367.01
   },
   "source": "negozi"
+ },
+ {
+  "date": "2026-11-27",
+  "min_price": 925.89,
+  "avg_top10": 1019.87,
+  "offers": 27,
+  "cheapest_model": "Asrock VGA ASROCK RX 9070 XT 16GB CHALLENGER — Market2go",
+  "cheapest_shop": "Trovaprezzi",
+  "by_shop": {
+   "Trovaprezzi": 925.89,
+   "MediaWorld": 1137.36
+  },
+  "source": "negozi"
  }
 ]
